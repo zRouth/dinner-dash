@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'application#index'
   get '/menu' => 'application#menu'
 
+  resources :categories
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
