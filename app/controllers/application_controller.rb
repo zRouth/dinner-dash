@@ -6,5 +6,6 @@ class ApplicationController < ActionController::Base
   end
 
   def menu
+    @menu_items = MenuItem.all
   end
 end
