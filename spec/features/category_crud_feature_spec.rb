@@ -22,4 +22,19 @@ feature "categories things" do
 
     expect(page.body).not_to include new_category
   end
+
+  scenario "User edits a category" do
+    new_category = "I created a category"
+    Category.create(title: new_category)
+
+    visit "/categories"
+    expect(page.body).to include new_category
+    click_link_or_button "Title: #{new_category}"
+    click_link_or_button "Edit"
+
+    fill_in "category[title]", with: "I edited a category"
+    click_link_or_button "Update Category"
+    expect(page.body).to include "I edited a category"
+    expect(page.body).not_to include new_category
+  end
 end
