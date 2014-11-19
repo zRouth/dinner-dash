@@ -1,4 +1,5 @@
-<div>
+<div class="page-wrapper">
+  <div class="content">
   <p>ID: <%= @category.id %></p>
   <p>Title: <%= @category.title %></p>
   <form action="<%= category_path(@category) %>" method="post">
@@ -7,4 +8,5 @@
   </form>
   <a href="/categories/<%= @category.id %>/edit">Edit</a>
   <a href="<%= categories_path %>">Back</a>
+  </div>
 </div>
