@@ -7,22 +7,22 @@ class SessionsController < ApplicationController
     user = User.find_by(email: user_params[:email]).try(:authenticate, user_params[:password])
 
     if user
-      session[:user_id] = user.id
-      redirect_to users_path, notice: "Welcome to DinnerDash, #{user.name}."
+      session[:email] = user.id
+      redirect_to users_path, notice: "Welcome to DinnerDash, #{user.full_name}."
     else
       redirect_to login_path, notice: "We could not log you in. Please try again."
     end
   end
 
-  # def destroy
-  #   session.clear
+  def destroy
+    session.clear
 
-  #   redirect_to root_path, notice: "You are logged out."
-  # end
+    redirect_to root_path, notice: "You are logged out."
+  end
 
-  # private
+  private
 
-  # def user_params
-  #   params.require(:user).permit(:email, :password)
-  # end
+  def user_params
+    params.require(:user).permit(:email, :password)
+  end
 end
