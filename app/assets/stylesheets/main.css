@@ -47,7 +47,7 @@ header img {
 h1 {
   font-family: SamuraiBob;
   text-align: center;
-  float; right;
+  /*float: right;*/
   font-size: 142px;
 }
 
