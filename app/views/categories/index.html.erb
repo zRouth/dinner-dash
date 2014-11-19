@@ -1,7 +1,11 @@
-<h1>Categories</h1>
+<div class="page-wrapper">
+  <div class="content">
+<h1>CATEGORIES</h1>
 <h3><a href="/categories/new">New</a></h3>
 <% @categories.each do |category| %>
     <p>ID: <%= category.id %></p>
     <p><a href="<%= category_path(category) %>">Title: <%= category.title %></a></p>
     <br>
 <% end %>
+</div>
+</div>
