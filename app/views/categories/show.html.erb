@@ -1,12 +1,9 @@
 <div class="page-wrapper">
   <div class="content">
-  <p>ID: <%= @category.id %></p>
-  <p>Title: <%= @category.title %></p>
-  <form action="<%= category_path(@category) %>" method="post">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" name="submit" value="Delete">
-  </form>
-  <a href="/categories/<%= @category.id %>/edit">Edit</a>
-  <a href="<%= categories_path %>">Back</a>
+    <p>ID: <%= @category.id %></p>
+    <p>Title: <%= @category.title %></p>
+    <%= link_to "Delete", @category, method: :delete, data: { confirm: "Fo real?" } %>
+    <%= link_to "Edit", edit_category_path(@category) %>
+    <%= link_to "Back", categories_path %>
   </div>
 </div>
