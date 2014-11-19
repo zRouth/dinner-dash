@@ -1,0 +1,10 @@
+<div>
+  <p>ID: <%= @category.id %></p>
+  <p>Title: <%= @category.title %></p>
+  <form action="<%= category_path(@category) %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" name="submit" value="Delete">
+  </form>
+  <a href="/categories/<%= @category.id %>/edit">Edit</a>
+  <a href="<%= categories_path %>">Back</a>
+</div>
