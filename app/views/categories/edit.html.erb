@@ -1,13 +1,5 @@
 <div class="page-wrapper">
   <div class="content">
-    <%= form_for(@category) do |form| %>
- <div class="field">
-   <%= form.label :title %><br>
-   <%= form.text_field :title %>
- </div>
- <div class="actions">
-   <%= form.submit %>
- </div>
-<% end %>
-</div>
+    <%= render 'form' %>
+  </div>
 </div>
