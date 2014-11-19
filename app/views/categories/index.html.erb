@@ -1,6 +1,7 @@
+<h1>Categories</h1>
+<h3><a href="/categories/new">New</a></h3>
 <% @categories.each do |category| %>
-  <p>
     <p>ID: <%= category.id %></p>
-    <p>Title: <%= category.title %></p>
-  </p>
+    <p><a href="<%= category_path(category) %>">Title: <%= category.title %></a></p>
+    <br>
 <% end %>
