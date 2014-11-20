@@ -3,9 +3,8 @@
     <h1>CATEGORIES</h1>
     <h3><%= link_to "New", new_category_path %></h3>
     <% @categories.each do |category| %>
-        <p>ID: <%= category.id %></p>
-        <p><%= link_to "Title: #{category.title}", category_path(category) %></p>
-        <br>
+        <p>ID: <%= category.id %><br>
+        <%= link_to "Title: #{category.title}", category_path(category) %></p>
     <% end %>
   </div>
 </div>

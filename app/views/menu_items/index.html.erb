@@ -1,0 +1,11 @@
+<div class="page-wrapper">
+  <div class="content">
+    <h1>MENU ITEMS</h1>
+    <h3><%= link_to "New", new_menu_item_path %></h3>
+    <% @menu_items.each do |menu_item| %>
+      <p><%= link_to "Title: #{menu_item.title}", menu_item_path(menu_item) %><br>
+      <%= menu_item.description %><br>
+      <%= menu_item.price %></p>
+    <% end %>
+  </div>
+</div>
