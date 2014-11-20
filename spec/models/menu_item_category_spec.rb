@@ -31,7 +31,7 @@ describe "MenuItems and Categories link up" do
     category.menu_items << menu_item2
     expect(category.menu_items).to include menu_item2
 
-    category.menu_items -= [menu_item2]
+    category.menu_items.delete menu_item2.id
 
     expect(category.menu_items).to include menu_item
     expect(menu_item.categories).to include category
