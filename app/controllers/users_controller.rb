@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+
+  end
+
   def new
     @user = User.new
   end
@@ -9,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "User created"
       session[:email] = @user.id
-      redirect_to :back
+      redirect_to :users
     else
       flash.new[:notice] = "User could not be created"
       render.new
