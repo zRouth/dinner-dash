@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 MenuItem.create title: "Tuna Poke", description: "tuna cubes, avocado, seaweed, togarashi", price: 995
 MenuItem.create title: "Miso Soup", description: "dashi, bonito, tofu", price: 5467
-MenuItem.create title: "Fried Octopus", description: "baby octopus, seasme, ginger, soy sauce, light fried", price: 4995
+MenuItem.create title: "Fried Octopus", description: "baby octopus, sesame, ginger, soy sauce, light fried", price: 4995
 MenuItem.create title: "Edamame", description: "soy beans, soy sauce, togarashi", price: 1995
-MenuItem.create title: "Tempura Veggies", description: "cauliflowers, carrots, sweet potato, brocolli", price: 5995
+MenuItem.create title: "Tempura Veggies", description: "cauliflowers, carrots, sweet potato, broccoli", price: 5995
 MenuItem.create title: "Seaweed Salad", description: "seaweed, soy sauce, scallions, ginger, cilantro, pepper flakes", price: 3241
