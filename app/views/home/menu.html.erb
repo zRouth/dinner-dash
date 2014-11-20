@@ -1,5 +1,8 @@
 <div class="page-wrapper">
-    <div class="content">
+  <div class="content">
+    <% if @menu_items.empty? %>
+      <h1>THERE ARE NO MENU ITEMS.<br>NO FOOD 4 U</h1>
+    <% end %>
     <% @menu_items.each do |menu_item| %>
       <div class="menu-item">
         <%= menu_item.title %><br>

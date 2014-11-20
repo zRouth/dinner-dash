@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#6'
-  get '/menu' => 'application#menu'
+  root 'home#index'
+  get '/menu' => 'home#menu'
   get '/login' => 'sessions#new'
   # resources :menu_items - ALEX let's talk
 
