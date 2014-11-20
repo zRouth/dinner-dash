@@ -1,16 +1,11 @@
 <div class="page-wrapper">
     <div class="content">
-    <p>Your mom... is testing the menu page</p>
-
-    <div class="menu-item">
-      <%= "Title" %><br>
-      <%= "Description" %><br>
-      <%= "Price" %>
-    </div>
-    <div class="menu-item">
-      <%= "Title" %><br>
-      <%= "Description" %><br>
-      <%= "Price" %>
-    </div>
+    <% @menu_items.each do |menu_item| %>
+      <div class="menu-item">
+        <%= menu_item.title %><br>
+        <%= menu_item.description %><br>
+        <%= number_to_currency(menu_item.price / 100.0) %>
+      </div>
+    <% end %>
   </div>
 </div>
