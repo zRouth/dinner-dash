@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   # resources :menu_items - ALEX let's talk
 
+  # namespace :admin do
+  #
+  # end
+
   resources :users
   resources :sessions
   resources :categories
