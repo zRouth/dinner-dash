@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'application#6'
   get '/menu' => 'application#menu'
   get '/login' => 'sessions#new'
+  # resources :menu_items - ALEX let's talk
 
   resources :users
   resources :sessions

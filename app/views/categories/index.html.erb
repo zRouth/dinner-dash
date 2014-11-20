@@ -1,6 +1,11 @@
-<% @categories.each do |category| %>
-  <p>
-    <p>ID: <%= category.id %></p>
-    <p>Title: <%= category.title %></p>
-  </p>
-<% end %>
+<div class="page-wrapper">
+  <div class="content">
+    <h1>CATEGORIES</h1>
+    <h3><%= link_to "New", new_category_path %></h3>
+    <% @categories.each do |category| %>
+        <p>ID: <%= category.id %></p>
+        <p><%= link_to "Title: #{category.title}", category_path(category) %></p>
+        <br>
+    <% end %>
+  </div>
+</div>

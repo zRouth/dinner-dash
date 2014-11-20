@@ -1,1 +1,11 @@
-welcome to my menu page sucker
+<div class="page-wrapper">
+    <div class="content">
+    <% @menu_items.each do |menu_item| %>
+      <div class="menu-item">
+        <%= menu_item.title %><br>
+        <%= menu_item.description %><br>
+        <%= number_to_currency(menu_item.price / 100.0) %>
+      </div>
+    <% end %>
+  </div>
+</div>
