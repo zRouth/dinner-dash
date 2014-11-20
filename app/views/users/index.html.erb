@@ -1,6 +1,12 @@
 <div class="page-wrapper">
   <div class="content">
     <img src="assets/sushi.png" border="0" alt="sushi" width="100%">
-    <p>Your mom... is testing the users  page</p>
+
+      <% @users.each do |user| %>
+      <p>Name: <%= user.full_name %><br>
+      Username: <%= user.user_name %><br>
+      Email: <%= user.email %><br>
+      <% end %>
+
   </div>
 </div>
