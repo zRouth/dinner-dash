@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/menu' => 'home#menu'
   get '/login' => 'sessions#new'
-  # resources :menu_items - ALEX let's talk
 
   # namespace :admin do
   #
   # end
 
+  resources :menu_items
   resources :users
   resources :sessions
   resources :categories

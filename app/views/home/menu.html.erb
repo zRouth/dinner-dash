@@ -4,7 +4,8 @@
     <% if @menu_items.empty? %>
       <h1>THERE ARE NO MENU ITEMS.<br>NO FOOD 4 U</h1>
     <% end %>
-    <% @menu_items.each do |menu_item| %>
+    <% @menu_items.each.with_index do |menu_item, i| %>
+      <h2><%= i %></h2>
       <div class="menu-item">
         <%= menu_item.title %><br>
         <%= menu_item.description %><br>
