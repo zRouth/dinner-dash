@@ -4,12 +4,14 @@
     <% if @menu_items.empty? %>
       <h1>THERE ARE NO MENU ITEMS.<br>NO FOOD 4 U</h1>
     <% end %>
+      <center>SEARCH:<input type="text" name="category-fuzzy" value="" onkeyup="window.fuzzy(this.value);" style="clear: both;"></center>
     <div class="menu">
       <% @menu_items.each do |menu_item| %>
-        <div class="menu-item">
+        <div class="menu-item" categories="<%= menu_item.categories.pluck("title").join "," %>">
           <span class="menu-item-title"><%= menu_item.title.upcase %></span>
           <span class="menu-item-price"><%= number_to_currency(menu_item.price / 100.0) %></span>
-          <span class="menu-item-description"><%= menu_item.description %></span>
+          <span class="menu-item-description"><%= menu_item.description %></span><br>
+
         </div>
       <% end %>
       <div style="clear: both;"></div>
