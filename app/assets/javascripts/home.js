@@ -8,7 +8,8 @@ function hideElement(element) {
 
 function doesNotHave(search) {
     return function(element) {
-        content = element.getAttribute("categories") + element.innerText;
+        var title = [].slice.call(element.children).filter(function(e){return e.classList.toString().match(/menu-item-title/);})[0].innerText;
+        var content = element.getAttribute("categories") + title;
         return !content.match(new RegExp(search, "gi"));
     };
 };
