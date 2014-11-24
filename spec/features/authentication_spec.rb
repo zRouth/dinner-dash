@@ -13,4 +13,24 @@ require 'capybara/rspec'
       click_button 'Create User'
       expect(page).to have_content("User created")
     end
+
+    context 'when logged out' do
+      before(:each) do
+        visit root_path
+      end
+
+      it 'has a Sign in link' do
+        expect(page).to have_link('Sign in', href: login_path)
+      end
+
+      it 'has a Sign up link' do
+        expect(page).to have_link('Sign up', href = "/users/new")
+      end
+
+    end
+
+
+    xit 'has a logout link when user is logged in' do
+      expect(page).to have_link('Logout')
+    end
   end
