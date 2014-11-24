@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, :type => :model do
 
   let(:user) do
-    User.new(email: 'email@gmail.com', full_name: 'zach man', user_name: 'zach',
+    User.new(email: 'email@gmail.com', full_name: 'zach man', user_name: nil,
               password: 'password', password_confirmation: 'password')
   end
 
@@ -25,8 +25,17 @@ RSpec.describe User, :type => :model do
   end
 
   it 'is invalid without a user name' do
-    user.user_name = nil
-    expect(user).not_to be_valid
+    expect(user).to be_valid
+  end
+
+  it 'is invalid with a user name with only 1 character' do
+    user.user_name = 'z'
+    expect(user).to_not be_valid
+  end
+
+  it 'is invalid with a user name longer than 32 characters' do
+    user.user_name = ('z' * 33)
+    expect(user).to_not be_valid
   end
 
   it 'is invalid without a password' do
