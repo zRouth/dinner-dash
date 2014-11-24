@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: user_params[:email]).try(:authenticate, user_params[:password])
 
     if user
-      session[:email] = user.id
+      session[:user_id] = user.id
       redirect_to users_path, notice: "Welcome to DinnerDash, #{user.full_name}."
     else
       redirect_to login_path, notice: "We could not log you in. Please try again."

@@ -1,7 +1,11 @@
 <div class="page-wraper">
 <header>
   <img src="/assets/lumberjack.png" alt="Japanese Lumberjack">
+  <% if current_user %>
+    <subnav><%= link_to "Logout", logout_path, id: 'logout', method: 'delete' %></subnav>
+  <% else %>
     <subnav><a href="/login">Sign in</a> | <a href="users/new">Sign up</a></subnav>
+  <% end %>
   <h1>NOKOGIRI SUSHI</h1>
   <nav>
     <ul>

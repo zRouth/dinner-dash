@@ -4,18 +4,11 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :null_session
 
-  rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = "NO SOUP FOR YOU!"
-    redirect_to root_url
-  end
-
-  helper_method :current_cart
+  helper_method :current_user
 
   def current_user
-    User.find(session[:cart_id])
-  rescue
-    user = User.create
-    session[:user_id] = user.id
-    cart
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+
 end
