@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-R.spec.describe SessionsController, :type => :controller do
+RSpec.describe SessionsController, :type => :controller do
 
 end
