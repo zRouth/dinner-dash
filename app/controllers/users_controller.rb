@@ -16,9 +16,9 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.save
-      flash[:notice] = "User created"
       session[:email] = @user.id
-      redirect_to :users
+      redirect_to root_path
+      flash[:notice] = "User created"
     else
       flash.new[:notice] = "User could not be created"
       render.new
