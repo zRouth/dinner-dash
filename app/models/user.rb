@@ -4,4 +4,9 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
 
   validates :email, :full_name, :user_name, presence: true
+
+  def is_admin?
+    admin
+  end
+
 end
