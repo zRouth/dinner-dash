@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'capybara/rails'
-require 'capybara/rspec'
 
 describe 'user authentication', type: :feature do
   it 'creates a user' do
@@ -24,7 +22,7 @@ describe 'user authentication', type: :feature do
     end
 
     it 'has a Sign up link' do
-      expect(page).to have_link('Sign up', href = "/users/new")
+      expect(page).to have_link('Sign up', href: new_user_path)
     end
 
     it 'does not have a logout link' do

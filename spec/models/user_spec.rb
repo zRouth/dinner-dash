@@ -16,7 +16,7 @@ RSpec.describe User, :type => :model do
     user.save
     invalid_user = user.dup
     invalid_user.email = user.email.upcase
-    expect(invalid_user.save).to be false
+    expect(invalid_user).not_to be_valid
   end
 
   it 'is invalid without a full name' do
