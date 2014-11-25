@@ -3,7 +3,7 @@
   <% if current_user %>
     <subnav><%= link_to "Logout", logout_path, id: 'logout', method: 'delete' %></subnav>
   <% else %>
-    <subnav><a href="/login">Sign in</a> | <a href="users/new">Sign up</a></subnav>
+    <subnav><%= link_to "Sign in", "/login" %> | <%= link_to "Sign up", new_user_path %></subnav>
   <% end %>
   <h1>NOKOGIRI SUSHI</h1>
   <nav>
