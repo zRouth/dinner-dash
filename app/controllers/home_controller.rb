@@ -4,8 +4,7 @@ class HomeController < ApplicationController
 
   def menu
     @cart = session[:cart]
-    @menu_items = MenuItem.all
-    @categories = Category.all
+    @categories = Category.all.includes(:menu_items)
   end
 
 end
