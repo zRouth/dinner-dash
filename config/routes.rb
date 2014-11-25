@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/menu' => 'home#menu'
   get '/contact' => 'home#contact'
+  get '/about' => 'home#about'
+
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
