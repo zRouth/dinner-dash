@@ -283,3 +283,40 @@ footer p {
   background-image: url("/assets/teeth_blue.png");
   background-repeat: repeat;
 }
+
+/*about page styles*/
+
+.profiles {
+  width: 44%;
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.profiles img {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.profiles a {
+  color: #000;
+  text-decoration: none;
+}
+
+.profiles a:hover {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.profiles a:visited {
+  color: #626262;
+  text-decoration: none;
+}
+
+.profile-wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
