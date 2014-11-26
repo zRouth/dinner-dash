@@ -5,16 +5,16 @@ class Admin::CategoriesController < AdminController
   end
 
   def show
-    @category = Category.find_by_id(params[:id])
+    @category = Category.find(params[:id])
     redirect_to categories_path unless @category
   end
 
   def edit
-    @category = Category.find_by_id(params[:id])
+    @category = Category.find(params[:id])
   end
 
   def update
-    @category = Category.find_by_id(params[:id])
+    @category = Category.find(params[:id])
     @category.update(correct_params)
     redirect_to category_path(@category)
   end
@@ -29,7 +29,7 @@ class Admin::CategoriesController < AdminController
   end
 
   def destroy
-    category = Category.find_by_id(params[:id])
+    category = Category.find(params[:id])
     category.delete if category
     redirect_to categories_path
   end

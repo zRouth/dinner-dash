@@ -7,7 +7,7 @@ class CartController < ApplicationController
   def show
     @cart = session[:cart]
     @items_ordered = @cart.map do |id, quantity|
-      [MenuItem.find_by_id(id).title, quantity]
+      [MenuItem.find(id).title, quantity]
     end
   end
 
