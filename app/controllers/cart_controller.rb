@@ -14,8 +14,6 @@ class CartController < ApplicationController
   def update
     session[:cart] ||= {}
     amount = params[:menu_item][:amount].to_i
-    require 'pry'
-    binding.pry
     session[:cart][params[:id]] = amount < 0 ? 0 : amount
     redirect_to :back
   end
