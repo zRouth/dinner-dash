@@ -12,15 +12,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
 
     if @user.save
       session[:email] = @user.id
-      redirect_to root_path
       flash[:notice] = "User created"
+      redirect_to root_path
     else
-      flash.new[:notice] = "User could not be created"
-      render.new
+      flash[:notice] = "User could not be created"
+      render :new
     end
   end
 

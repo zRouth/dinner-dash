@@ -7,13 +7,15 @@ class CartController < ApplicationController
   def show
     @cart = session[:cart]
     @items_ordered = @cart.map do |id, quantity|
-      [MenuItem.find_by_id(id).title, quantity]
+      [MenuItem.find(id).title, quantity]
     end
   end
 
   def update
     session[:cart] ||= {}
     amount = params[:menu_item][:amount].to_i
+    require 'pry'
+    binding.pry
     session[:cart][params[:id]] = amount < 0 ? 0 : amount
     redirect_to :back
   end
