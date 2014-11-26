@@ -4,6 +4,13 @@ class CartController < ApplicationController
     redirect_to :back
   end
 
+  def show
+    @cart = session[:cart]
+    @items_ordered = @cart.map do |id, quantity|
+      [MenuItem.find(id).title, quantity]
+    end
+  end
+
   def update
     session[:cart] ||= {}
     amount = params[:menu_item][:amount].to_i
