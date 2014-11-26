@@ -6,6 +6,6 @@
     <% end %>
     <div class="search">Search for deliciousness:<input type="text" name="category-fuzzy" value="" onkeyup="fuzzy(this.value);" style="clear: both;"></div>
     <div style="clear: both;"></div>
-    <%= render partial: @categories %>
+    <%= render partial: "/admin/categories/category", collection: @categories %>
   </div>
 </div>

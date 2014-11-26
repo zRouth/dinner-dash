@@ -23,8 +23,10 @@ Rails.application.routes.draw do
 
   resources :menu_items
   resources :users
-  resources :sessions
-  resources :categories
+  resources :sessions # ??????????????????????? do we need this when we have '/login' and '/logout'
+  scope module: :admin do
+    resources :categories
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

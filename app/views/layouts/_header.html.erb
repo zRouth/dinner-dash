@@ -1,17 +1,19 @@
 <header>
   <img src="/assets/lumberjack.png" alt="Japanese Lumberjack">
-  <% if current_user %>
-    <subnav><%= link_to "Logout", logout_path, id: 'logout', method: 'delete' %></subnav>
-  <% else %>
-    <subnav><%= link_to "Sign in", "/login" %> | <%= link_to "Sign up", new_user_path %></subnav>
-  <% end %>
+  <subnav>
+    <% if current_user %>
+      <%= link_to "Logout", logout_path, id: 'logout', method: 'delete' %>
+    <% else %>
+      <%= link_to "Sign in", "/login" %> | <%= link_to "Sign up", new_user_path %>
+    <% end %>
+  </subnav>
   <h1>NOKOGIRI SUSHI</h1>
   <nav>
     <ul>
-      <li><a href="/">HOME</a></li>
-      <li><a href="/about">ABOUT</a></li>
-      <li><a href="/menu">MENU</a></li>
-      <li><a href="/contact">CONTACT</a></li>
+      <li><%= link_to "HOME",     "/"         %></li>
+      <li><%= link_to "ABOUT",    "/about"    %></li>
+      <li><%= link_to "MENU",     "/menu"     %></li>
+      <li><%= link_to "CONTACT",  "/contact"  %></li>
     </ul>
   </nav>
   <div style="clear: both;"></div>
