@@ -220,6 +220,7 @@ subnav a:visited {
 }
 
 .menu-item-description {
+  height: 40px;
 }
 
 .menu-item-button {

@@ -17,15 +17,20 @@ class MenuItemsController < ApplicationController
   end
 
   def show
+    @menu_item = MenuItem.find_by_id(params[:id])
+    redirect_to menu_items_path unless @menu_item
   end
 
   def update
-  end
-
-  def update
+    @menu_item = MenuItem.find_by_id(params[:id])
+    @menu_item.update(correct_params)
+    redirect_to menu_items_path(@menu_item)
   end
 
   def destroy
+    menu_item = MenuItem.find_by_id(params[:id])
+    menu_item.delete if menu_item
+    redirect_to menu_items_path
   end
 
   def correct_params

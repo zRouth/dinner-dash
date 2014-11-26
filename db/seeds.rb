@@ -23,10 +23,8 @@ appetizers.menu_items.create!(title: "Tempura Veggies", description: "cauliflowe
 appetizers.menu_items.create!(title: "Seaweed Salad", description: "seaweed, soy sauce, scallions, ginger, cilantro, pepper flakes", price: 3241)
 
 sushi.menu_items.create!(title: "Tuna", description: "blank description", price: 1247)
-sushi.menu_items.create!(title: "Spicy", description: "blank description", price: 2903)
-sushi.menu_items.create!(title: "Tuna", description: "blank description", price: 3981)
-sushi.menu_items.create!(title: "Fatty", description: "blank description", price: 187)
-sushi.menu_items.create!(title: "Tuna", description: "blank description", price: 7373)
+sushi.menu_items.create!(title: "Spicy Tuna", description: "blank description", price: 2903)
+sushi.menu_items.create!(title: "Fatty Tuna", description: "blank description", price: 3981)
 sushi.menu_items.create!(title: "Salmon", description: "blank description", price: 7507)
 sushi.menu_items.create!(title: "Yellowtail", description: "blank description", price: 5917)
 sushi.menu_items.create!(title: "Mackerel", description: "blank description", price: 391)
