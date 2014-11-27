@@ -1,10 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(full_name: "Rachel Warbelow", email: "demo+rachel@jumpstartlab.com", password: "password", password_confirmation: "password",)
+User.create(full_name: "Jeff", email: "demo+jeff@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "j3")
+User.create(full_name: "Jorge Tellez", email: "demo+jorge@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "novohispano")
+User.create(full_name: "Josh Cheek", email: "demo+josh@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "josh", admin: true)
 
 appetizers      = Category.create(title: "Appetizers")
 sushi           = Category.create(title: "Sushi")
