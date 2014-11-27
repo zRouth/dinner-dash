@@ -6,11 +6,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :require_admin
 
-  before_filter :load_cart
-
-  def load_cart
-    @cart = session[:cart] || {}
-  end
+  # before_filter :load_cart
+  #
+  # def load_cart
+  #   @cart = session[:cart] || {}
+  # end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
