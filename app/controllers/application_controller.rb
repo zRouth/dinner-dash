@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :require_admin
 
+#Josh recommended that we load cart in application controller
   # before_filter :load_cart
   #
   # def load_cart
