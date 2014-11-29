@@ -86,6 +86,4 @@ Rails.application.configure do
     :fog_directory => ENV['S3_BUCKET_NAME']
   }
 
-  'Version' '2008-10-17'
-
 end
