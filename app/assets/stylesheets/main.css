@@ -286,8 +286,18 @@ footer p {
 
 /*about page styles*/
 
+.about-us {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  background: #ccc;
+  margin: 10px 0;
+}
+
 .profiles {
-  width: 44%;
+  width: 47%;
   float: left;
   border: 1px solid #ccc;
   border-radius: 25px;
