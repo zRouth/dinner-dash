@@ -35,8 +35,9 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config:set S3_BUCKET_NAME = dinnerdash
-  config:set AWS_ACCESS_KEY_ID = AKIAJ7JLBIP2XOSA4JXQ
-  config:set AWS_SECRET_ACCESS_KEY = 9IcYtp8HIB41nkSvDYU7kK4EAhXnXLxxMGIwcgG
-  config:set S3_BUCKET_NAME = nokigiri-sushi-assets
+# This is for the image upload but it's not working FML
+  # config:set S3_BUCKET_NAME = dinnerdash
+  # config:set AWS_ACCESS_KEY_ID = AKIAJ7JLBIP2XOSA4JXQ
+  # config:set AWS_SECRET_ACCESS_KEY = 9IcYtp8HIB41nkSvDYU7kK4EAhXnXLxxMGIwcgG
+  # config:set S3_BUCKET_NAME = nokigiri-sushi-assets
 end
