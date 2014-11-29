@@ -42,6 +42,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :production do
-  gem 'rails_12factor'
-end
+gem 'paperclip'
+
+gem 'aws'
+
+gem 'fog'
+
+gem 'rails_12factor', group: :production

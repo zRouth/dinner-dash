@@ -27,8 +27,11 @@ module DinnerDash
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.cache_classes = true
     config.serve_static_assets = true
     config.assets.enabled = true
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.assets.compile = true
+    config.assets.digest = true
   end
 end

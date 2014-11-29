@@ -1,7 +1,8 @@
 <div class="menu-category"><%= category.title %></div><br>
 <% category.menu_items.each do |menu_item| %>
   <div class="menu-item" categories="<%= menu_item.categories.pluck("title").join "," %>">
-    <div class="menu-item-img"><img src="/assets/menuitem.gif"></div>
+    <!-- <div class="menu-item-img"><img src="/assets/menuitem.gif"></div> -->
+    <div class="menu-item-img"><%= image_tag menu_item.image.url(:icon) %></div>
     <div class="menu-item-title"><h3><%= menu_item.title.upcase %></h3></div>
     <div class="menu-item-description"><%= menu_item.description %></div><br>
     <div style="width:50%;"><%= form_tag "/menu_items/#{menu_item.id}/add_to_cart", method: :post do %></div>
