@@ -316,3 +316,49 @@ footer p {
   width: 70%;
   margin: 0 auto;
 }
+
+/*contact page styles*/
+.contact-us {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  background: #ccc;
+  margin: 10px 0;
+}
+
+.contact {
+  width: 97%;
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.contact img {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.contact a {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.contact-wrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.contact-wrapper p {
+  font-family: 'Lato', sans-serif;
+  
+}
