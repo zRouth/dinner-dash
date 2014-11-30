@@ -2,7 +2,7 @@
   <div class="content">
     <p>ID: <%= @category.id %></p>
     <p>Title: <%= @category.title %></p>
-    <%= link_to "Delete", @category, method: :delete, data: { confirm: "Fo real?" } %>
+    <%= link_to "Delete", @category, method: :delete, data: { confirm: "You really want to delete this? Really? Fo real?" } %>
     <%= link_to "Edit", edit_category_path(@category) %>
     <%= link_to "Back", categories_path %>
   </div>
