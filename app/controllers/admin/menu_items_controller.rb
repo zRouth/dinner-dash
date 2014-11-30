@@ -1,4 +1,4 @@
-class MenuItemsController < ApplicationController
+class Admin::MenuItemsController < AdminController
   before_filter :set_menu_item, only: [:edit, :show, :update]
 
   def index
@@ -15,13 +15,16 @@ class MenuItemsController < ApplicationController
   end
 
   def edit
+    @menu_item = MenuItem.find(params[:id])
   end
 
   def show
+    @menu_item = MenuItem.find(params[:id])
     redirect_to menu_items_path unless @menu_item
   end
 
   def update
+    @menu_item = MenuItem.find(params[:id])
     @menu_item.update(correct_params)
     redirect_to menu_items_path(@menu_item)
   end
