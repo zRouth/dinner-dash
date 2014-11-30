@@ -1,8 +1,3 @@
-<div class="page-wrapper">
-  <div class="content">
-
-    <img src="/assets/sushi.png" border="0" alt="sushi" width="100%">
-    <div style="clear: both;"></div>
     <div class="yum">
       <div class="menu-item">
         <div class="menu-item-img"><%= image_tag @menu_item.image.url(:icon) %></div>
@@ -15,9 +10,4 @@
         <div class="menu-item-price"><%= number_to_currency(@menu_item.price / 100.0) %></div>
       </div>
     </div>
-    <div style="clear:both;">
-
-    </div>
-
-  </div>
-</div>
+    <div style="clear:both;"></div>
