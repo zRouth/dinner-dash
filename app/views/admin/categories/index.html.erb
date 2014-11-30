@@ -1,6 +1,6 @@
-    <h2>CATEGORIES</h2>
-    <h3><%= link_to "New", new_category_path %></h3>
-    <% @categories.each do |category| %>
-        <p>ID: <%= category.id %><br>
-        <%= link_to "Title: #{category.title}", category_path(category) %></p>
-    <% end %>
+<h2>CATEGORIES</h2>
+<h3><%= link_to "New", new_category_path %></h3>
+<% @categories.each do |category| %>
+  <p>ID: <%= category.id %><br>
+  <%= link_to "Title: #{category.title}", category_path(category) %></p>
+<% end %>
