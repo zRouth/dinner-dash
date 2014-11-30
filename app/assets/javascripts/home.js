@@ -26,11 +26,6 @@ function atLeastOne(form) {
         form.menu_item_amount.value = 1;
 }
 
-// function fade() {
-//   ('.flash').fadeIn().delay(3000).fadeOut();
-// }
-// fade();
-
 setTimeout(function(){
   $(".flash").fadeOut("slow");
-}, 1500 ); 
+}, 1500 );
