@@ -7,10 +7,23 @@ describe 'Application authorizaiton' do
       visit root_path
     end
 
-    it 'cannot access a restriced page' do
+    it 'cannot access the users index page' do
       user = FactoryGirl.create(:user)
       visit users_path
       expect(page).to have_content('NO SOUP FOR YOU!')
+      expect(page.current_path).to_not eq users_path
+    end
+
+    it 'cannot access the categories index page' do
+      visit categories_path
+      expect(page).to have_content('NO SOUP FOR YOU!')
+      expect(page.current_path).to_not eq categories_path
+    end
+
+    it 'cannot access the menu_items index page' do
+      visit menu_items_path
+      expect(page).to have_content('NO SOUP FOR YOU!')
+      expect(page.current_path).to_not eq menu_items_path
     end
   end
 
