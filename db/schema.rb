@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129181021) do
+ActiveRecord::Schema.define(version: 20141130010138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,24 @@ ActiveRecord::Schema.define(version: 20141129181021) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "order_menu_items", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "menu_item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "order_menu_items", ["menu_item_id"], name: "index_order_menu_items_on_menu_item_id", using: :btree
+  add_index "order_menu_items", ["order_id"], name: "index_order_menu_items_on_order_id", using: :btree
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
