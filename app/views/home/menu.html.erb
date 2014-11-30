@@ -1,6 +1,6 @@
-    <% if @categories.all? { |category| category.menu_items.empty? } %>
-      <h1>THERE ARE NO MENU ITEMS.<br>NO FOOD 4 U</h1>
-    <% end %>
-    <div class="search">Search for deliciousness:<input type="text" name="category-fuzzy" value="" onkeyup="fuzzy(this.value);" style="clear: both;"></div>
-    <div style="clear: both;"></div>
-    <%= render partial: "/admin/categories/category", collection: @categories %>
+<% if @categories.all? { |category| category.menu_items.empty? } %>
+  <h1>THERE ARE NO MENU ITEMS.<br>NO FOOD 4 U</h1>
+<% end %>
+<div class="search">Search for deliciousness:<input type="text" name="category-fuzzy" value="" onkeyup="fuzzy(this.value);" style="clear: both;"></div>
+<div style="clear: both;"></div>
+<%= render partial: "/admin/categories/category", collection: @categories %>

@@ -1,26 +1,24 @@
-		<center><h2>Sign up to place an order for delicious Nokogiri sushi!</h2></center>
-		<div class="formfield">
-			<%= form_for(@user) do |form| %>
-			<div class="field">
+<center><h2>Sign up to place an order for delicious Nokogiri sushi!</h2></center>
+<div class="formfield">
+<%= form_for(@user) do |form| %>
+  <div class="field">
+    <%= form.label :email %><br>
+    <%= form.text_field :email %><br><br>
 
-		   <%= form.label :email %><br>
-		   <%= form.text_field :email %><br><br>
+    <%= form.label :full_name %><br>
+    <%= form.text_field :full_name %><br><br>
 
-		   <%= form.label :full_name %><br>
-		   <%= form.text_field :full_name %><br><br>
+    <%= form.label :user_name %><br>
+    <%= form.text_field :user_name %><br><br>
 
-		   <%= form.label :user_name %><br>
-		   <%= form.text_field :user_name %><br><br>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %><br><br>
 
-		   <%= form.label :password %><br>
-		   <%= form.password_field :password %><br><br>
-
-		   <%= form.label :password_confirmation %><br>
-		   <%= form.password_field :password_confirmation %><br><br>
-
-			</div>
-		 	<div class="actions">
-		   <%= form.submit %>
-		 	</div>
-			<% end %>
-		</div>
+    <%= form.label :password_confirmation %><br>
+    <%= form.password_field :password_confirmation %><br><br>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

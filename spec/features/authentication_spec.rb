@@ -51,5 +51,4 @@ describe 'user authentication', type: :feature do
       expect(page).to have_link 'Sign in'
     end
   end
-
 end

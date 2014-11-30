@@ -22,5 +22,4 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, notice: "NO SOUP FOR YOU!"
     end
   end
-
 end

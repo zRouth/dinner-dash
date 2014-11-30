@@ -11,7 +11,7 @@ feature "menu_items things" do
     fill_in 'Password', with: admin.password
     click_button 'Login'
   end
-  
+
   scenario "User creates a new menu_item" do
     visit "/menu_items"
     new_menu_item = {title: "I created a menu_item", description: "full of yummy", price: 10000}
