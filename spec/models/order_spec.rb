@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Order, :type => :model do
   let(:user) do
-    User.create(email: 'LOL', full_name: 'yooser',
+    User.create(email: 'LOL@LOL.LOL', full_name: 'yooser',
                 password: 'password', password_confirmation: 'password')
   end
 
