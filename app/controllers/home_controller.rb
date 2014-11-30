@@ -7,4 +7,8 @@ class HomeController < ApplicationController
     @categories = Category.all.includes(:menu_items)
   end
 
+  def yum
+    @menu_item = MenuItem.find(params[:id])
+  end
+
 end

@@ -35,9 +35,16 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-# This is for the image upload but it's not working FML
-  # config:set S3_BUCKET_NAME = dinnerdash
-  # config:set AWS_ACCESS_KEY_ID = AKIAJ7JLBIP2XOSA4JXQ
-  # config:set AWS_SECRET_ACCESS_KEY = 9IcYtp8HIB41nkSvDYU7kK4EAhXnXLxxMGIwcgG
-  # config:set S3_BUCKET_NAME = nokigiri-sushi-assets
+#this is supposed to work but it does not... arg.
+  # config.paperclip_defaults = {
+  #   :storage => :fog,
+  #   :fog_credentials => {
+  #     :provider => "AWS",
+  #     :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #     :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  #   },
+  #   :fog_directory => ENV["S3_BUCKET_NAME"],
+  #   :default_url => "assets/missing.gif"
+  # }
+
 end

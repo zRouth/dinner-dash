@@ -228,6 +228,24 @@ subnav a:hover {
   text-transform: uppercase;
 }
 
+.menu-item a {
+  text-decoration: none;
+  color: #000;
+}
+
+.menu-item a:hover {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.yum {
+  background-image: url("/assets/deliciousarrow.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  width: 100%;
+  height: 120px;
+}
+
 /*login styles*/
 
 .formfield {
