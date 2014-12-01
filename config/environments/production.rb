@@ -84,6 +84,8 @@ Rails.application.configure do
       :aws_secret_access_key => ['AWS_SECRET_ACCESS_KEY']
     },
     :fog_directory => ENV['S3_BUCKET_NAME']
+    :default_url => "http://s3.amazonaws.com/dinnerdash/missing.gif"
+    
   }
 
 end
