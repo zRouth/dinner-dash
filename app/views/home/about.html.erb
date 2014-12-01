@@ -1,10 +1,10 @@
 <div class="about-us">About</div><br>
-<div class="profile-wrapper">
-  <% @profiles.each do |name, github_username| %>
-    <div class="profiles">
-      <h2><%= link_to name.upcase, "https://github.com/#{github_username}" %></h2>
-      <%= link_to image_tag("#{name}.jpg", border: 0, alt: name, width: "40%"), "https://github.com/#{github_username}" %>
-    </div>
-  <% end %>
+  <div class="profile-wrapper">
+    <% @profiles.each do |name, github_username| %>
+      <div class="profiles">
+        <h2><%= link_to name.upcase, "https://github.com/#{github_username}" %></h2>
+        <%= link_to image_tag("#{name}.jpg", border: 0, alt: name, width: "40%"), "https://github.com/#{github_username}" %>
+      </div>
+    <% end %>
   <div style="clear: both;"></div>
 </div>

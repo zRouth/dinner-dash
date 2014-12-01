@@ -1,4 +1,8 @@
 class CartController < ApplicationController
+  #Josh recommended that we load cart in application controller (see app_contro)
+  #Rachel recommended that we not store the menu item name in session hash:
+    #only menu item id and quantity in session hash
+
   def destroy
     session[:cart] = {}
     redirect_to :back
