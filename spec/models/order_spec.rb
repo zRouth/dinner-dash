@@ -17,7 +17,7 @@ RSpec.describe Order, :type => :model do
     expect(order.delivery?).to eq false
   end
 
-  it "is marked for delivery" do
+  it "can be marked for delivery" do
     order = Order.new(delivery: true)
     expect(order.delivery?).to eq true
     expect(order.pickup?).to eq false
