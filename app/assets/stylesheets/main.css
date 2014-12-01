@@ -302,7 +302,6 @@ footer p {
   font-size: 2em;
   text-align: center;
   text-transform: uppercase;
-  background: #ccc;
   margin: 10px 0;
 }
 
@@ -343,7 +342,6 @@ footer p {
   font-size: 2em;
   text-align: center;
   text-transform: uppercase;
-  background: #ccc;
   margin: 10px 0;
 }
 
@@ -379,6 +377,8 @@ footer p {
 
 .contact-wrapper p {
   font-family: 'Lato', sans-serif;
+  text-align: center;
+}
 
 /*flash alert styles*/
 
