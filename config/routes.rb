@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   delete '/cart' => 'cart#destroy'
   post '/menu_items/:id/add_to_cart' => 'cart#update'
 
+  get '/orders' => 'orders#index'
+
   # namespace :admin do
   #
   # end

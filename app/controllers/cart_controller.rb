@@ -17,7 +17,11 @@ class CartController < ApplicationController
 
   def update
     session[:cart] ||= {}
-    amount = params[:menu_item][:amount].to_i
+    if params[:menu_item]
+      amount = params[:menu_item][:amount].to_i
+    else
+      amount = (session[:cart][params[:id]] || 0) + 1
+    end
     session[:cart][params[:id]] = amount < 0 ? 0 : amount
     redirect_to :back
   end

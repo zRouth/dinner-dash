@@ -1,7 +1,7 @@
-User.create(full_name: "Rachel Warbelow", email: "demo+rachel@jumpstartlab.com", password: "password", password_confirmation: "password",)
-User.create(full_name: "Jeff", email: "demo+jeff@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "j3")
-User.create(full_name: "Jorge Tellez", email: "demo+jorge@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "novohispano")
-User.create(full_name: "Josh Cheek", email: "demo+josh@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "josh", admin: true)
+rachel  = User.create(full_name: "Rachel Warbelow", email: "demo+rachel@jumpstartlab.com", password: "password", password_confirmation: "password",)
+jeff    = User.create(full_name: "Jeff", email: "demo+jeff@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "j3")
+jorge   = User.create(full_name: "Jorge Tellez", email: "demo+jorge@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "novohispano")
+josh    = User.create(full_name: "Josh Cheek", email: "demo+josh@jumpstartlab.com", password: "password", password_confirmation: "password", full_name: "josh", admin: true)
 
 appetizers      = Category.create(title: "Appetizers")
 sushi           = Category.create(title: "Sushi")
@@ -12,7 +12,7 @@ dairy_free      = Category.create(title: "Dairy Free")
 tempura         = Category.create(title: "Tempura")
 drinks          = Category.create(title: "Drinks")
 
-appetizers.menu_items.create!(title: "Tuna Poke", description: "tuna cubes, avocado, seaweed, togarashi", price: 995)
+tuna_poke = appetizers.menu_items.create!(title: "Tuna Poke", description: "tuna cubes, avocado, seaweed, togarashi", price: 995)
 appetizers.menu_items.create!(title: "Miso Soup", description: "dashi, bonito, tofu", price: 5467)
 appetizers.menu_items.create!(title: "Fried Octopus", description: "baby octopus, sesame, ginger, soy sauce, light fried", price: 4995)
 appetizers.menu_items.create!(title: "Edamame", description: "soy beans, soy sauce, togarashi", price: 1995)
@@ -47,7 +47,7 @@ vegetarian.menu_items.create!(title: "Seaweed Salad", description: "seaweed, soy
 vegetarian.menu_items.create!(title: "Vegetable tempura roll", description: "califlower, sweet potato, zucchini, cucumber, yuzu", price: 3278)
 vegetarian.menu_items.create!(title: "Spicy tofu cream cheese roll", description: "tofu tempura, cream cheese, avocado, crunch, spicy mayo", price: 4308)
 
-dairy_free.menu_items.create!(title: "Miso Soup", description: "dashi, bonito, tofu", price: 5467)
+miso_soup = dairy_free.menu_items.create!(title: "Miso Soup", description: "dashi, bonito, tofu", price: 5467)
 dairy_free.menu_items.create!(title: "Edamame", description: "soy beans, soy sauce, togarashi", price: 1995)
 dairy_free.menu_items.create!(title: "Seaweed Salad", description: "seaweed, soy sauce, scallions, ginger, cilantro, pepper flakes", price: 3241)
 
@@ -56,12 +56,24 @@ tempura.menu_items.create!(title: "Lobster tempura roll", description: "lobster 
 tempura.menu_items.create!(title: "Vegetable tempura roll", description: "califlower, sweet potato, zucchini, cucumber, yuzu", price: 3278)
 
 drinks.menu_items.create!(title: "Asahi beer", description: "blank description", price: 5516)
-drinks.menu_items.create!(title: "Sapporo beer", description: "blank description", price: 5629)
+sapporo_beer = drinks.menu_items.create!(title: "Sapporo beer", description: "blank description", price: 5629)
 drinks.menu_items.create!(title: "Kirin beer", description: "blank description", price: 5378)
 drinks.menu_items.create!(title: "Chang beer", description: "blank description", price: 5530)
 drinks.menu_items.create!(title: "Momokawa sake", description: "blank description", price: 6204)
 drinks.menu_items.create!(title: "Junmai sake", description: "blank description", price: 1517)
 drinks.menu_items.create!(title: "Daiginjo sake", description: "blank description", price: 6018)
 drinks.menu_items.create!(title: "Ginjo sake", description: "blank description", price: 7950)
-drinks.menu_items.create!(title: "Plum wine", description: "blank description", price: 1757)
-drinks.menu_items.create!(title: "Tea", description: "blank description", price: 2717)
+plum_wine = drinks.menu_items.create!(title: "Plum wine", description: "blank description", price: 1757)
+tea = drinks.menu_items.create!(title: "Tea", description: "blank description", price: 2717)
+
+jorge.orders.create do |order|
+  order.order_menu_items.build(menu_item: tea)
+  order.order_menu_items.build(menu_item: plum_wine, quantity: 3)
+  order.order_menu_items.build(menu_item: miso_soup, quantity: 3)
+end
+
+josh.orders.create do |order|
+  order.order_menu_items.build(menu_item: sapporo_beer, quantity: 6)
+  order.order_menu_items.build(menu_item: tuna_poke, quantity: 7)
+  order.order_menu_items.build(menu_item: miso_soup, quantity: 5)
+end
