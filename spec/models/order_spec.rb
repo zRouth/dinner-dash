@@ -22,4 +22,11 @@ RSpec.describe Order, :type => :model do
     expect(order.delivery?).to eq true
     expect(order.pickup?).to eq false
   end
+
+  it "can have an address" do
+    order = Order.create(delivery: true)
+    address = Address.create(street_number: "1231231", street: "fake-road", city: "mars" , state: "CO" , zip: "10000", order_id: order.id)
+    expect(order.address).to eq address
+    expect(address.order).to eq order
+  end
 end
