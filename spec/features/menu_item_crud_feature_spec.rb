@@ -1,6 +1,17 @@
 require "rails_helper"
 
 feature "menu_items things" do
+  let :admin do
+    User.create full_name: 'Admin The Man', email: 'the_admin@example.com', password: 'p4ssw0rd', password_confirmation: 'p4ssw0rd', admin: true
+  end
+
+  before(:each) do
+    visit '/login'
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
+    click_button 'Login'
+  end
+
   scenario "User creates a new menu_item" do
     visit "/menu_items"
     new_menu_item = {title: "I created a menu_item", description: "full of yummy", price: 10000}

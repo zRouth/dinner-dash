@@ -25,3 +25,7 @@ function atLeastOne(form) {
     if (form.menu_item_amount.value <= 0)
         form.menu_item_amount.value = 1;
 }
+
+setTimeout(function(){
+  $(".flash").fadeOut("slow");
+}, 1500 );

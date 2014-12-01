@@ -1,7 +1,5 @@
 require "rails_helper"
 
-
-
 feature "categories things" do
   let :admin do
     User.create full_name: 'Admin The Man', email: 'the_admin@example.com', password: 'p4ssw0rd', password_confirmation: 'p4ssw0rd', admin: true

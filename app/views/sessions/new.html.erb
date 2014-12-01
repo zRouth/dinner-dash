@@ -1,22 +1,15 @@
-<div class="page-wrapper">
-  <div class="content">
-    <img src="assets/sushi.png" border="0" alt="sushi" width="100%">
+<center><h2>Welcome back! Please sign in below:</h2></center>
 
-    <center><h2>Welcome back! Please sign in below:</h2></center>
-
-    <div class="formfield">
-    <%= form_for(@user, url: '/login') do |form| %>
-      <div class="field">
-       <%= form.label :email %><br>
-       <%= form.text_field :email %><br>
-       <%= form.label :password %><br>
-       <%= form.password_field :password %>
-       </div>
-       <div class="actions">
-       <%= form.submit "Login" %>
-      </div>
-    <% end %>
-    </div>
-
+<div class="formfield">
+<%= form_for(@user, url: '/login') do |form| %>
+  <div class="field">
+   <%= form.label :email %><br>
+   <%= form.text_field :email %><br>
+   <%= form.label :password %><br>
+   <%= form.password_field :password %>
+   </div>
+   <div class="actions">
+   <%= form.submit "Login" %>
   </div>
+<% end %>
 </div>

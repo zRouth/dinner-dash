@@ -1,12 +1,5 @@
-<div class="page-wrapper">
-  <div class="content">
-    <img src="assets/sushi.png" border="0" alt="sushi" width="100%">
-
-      <% @users.each do |user| %>
-      <p>Name: <%= user.full_name %><br>
-      Username: <%= user.user_name %><br>
-      Email: <%= user.email %><br>
-      <% end %>
-
-  </div>
-</div>
+<% @users.each do |user| %>
+<p>Name: <%= user.full_name %><br>
+Username: <%= user.user_name %><br>
+Email: <%= user.email %><br>
+<% end %>

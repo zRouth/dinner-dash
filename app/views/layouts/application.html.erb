@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dinner Dash</title>
+  <title>Nokogiri Sushi</title>
+  <link rel="shortcut icon" href="assets/favicon.ico"/>
   <link href='http://fonts.googleapis.com/css?family=Lato:900,400' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -9,11 +10,16 @@
 </head>
 <body>
   <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: name %>
+    <div class="flash"><%= content_tag :div, msg, class: name %></div>
   <% end %>
 
   <%= render "/layouts/header" %>
-  <%= yield %>
+  <div class="page-wrapper">
+    <div class="content">
+      <img src="/assets/sushi.png" border="0" alt="sushi" width="100%">
+      <%= yield %>
+    </div>
+  </div>
   <%= render "/layouts/footer" %>
 </body>
 </html>

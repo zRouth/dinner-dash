@@ -4,28 +4,28 @@ class Admin::CategoriesController < AdminController
     @categories = Category.all
   end
 
-  def show
-    @category = Category.find(params[:id])
-    redirect_to categories_path unless @category
-  end
-
-  def edit
-    @category = Category.find(params[:id])
-  end
-
-  def update
-    @category = Category.find(params[:id])
-    @category.update(correct_params)
-    redirect_to category_path(@category)
+  def create
+    Category.create correct_params
+    redirect_to categories_path
   end
 
   def new
     @category = Category.new
   end
 
-  def create
-    Category.create correct_params
-    redirect_to categories_path
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    redirect_to categories_path unless @category
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    @category.update(correct_params)
+    redirect_to category_path(@category)
   end
 
   def destroy

@@ -1,13 +1,10 @@
 <div class="menu-category"><%= category.title %></div><br>
 <% category.menu_items.each do |menu_item| %>
   <div class="menu-item" categories="<%= menu_item.categories.pluck("title").join "," %>">
-    <!-- <div class="menu-item-img"><img src="/assets/menuitem.gif"></div> -->
     <div class="menu-item-img"><%= image_tag menu_item.image.url(:icon) %></div>
-    <div class="menu-item-title"><h3><%= menu_item.title.upcase %></h3></div>
+    <div class="menu-item-title"><h3><%= link_to menu_item.title.upcase, "/menu/#{menu_item.id}" %></h3></div>
     <div class="menu-item-description"><%= menu_item.description %></div><br>
-    <div style="width:50%;"><%= form_tag "/menu_items/#{menu_item.id}/add_to_cart", method: :post do %></div>
-    <!-- note alex: this div is in here as a temp fix since this element is likely moving - didn't want to muddy the css with it -->
-    <%= number_field "menu_item", "amount", :style => "width:25px;", value: @cart && @cart[menu_item.id.to_s] || 0 %>
+    <%= form_tag "/menu_items/#{menu_item.id}/add_to_cart", method: :post do %>
       <div class="menu-item-button"><%= submit_tag "Add To Cart", onclick: "atLeastOne(this.parentElement.parentElement);" %></div>
     <% end %>
     <div class="menu-item-price"><%= number_to_currency(menu_item.price / 100.0) %></div>

@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   get '/menu' => 'home#menu'
+  get '/menu/:id' => 'home#yum'
   get '/contact' => 'home#contact'
   get '/about' => 'home#about'
 
+  get '/code' => redirect('https://github.com/chandracarney/dinner-dash')
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -21,11 +23,10 @@ Rails.application.routes.draw do
   #
   # end
 
-  resources :menu_items
   resources :users
-  resources :sessions # ??????????????????????? do we need this when we have '/login' and '/logout'
   scope module: :admin do
     resources :categories
+    resources :menu_items
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

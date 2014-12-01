@@ -13,9 +13,7 @@ describe 'user authentication', type: :feature do
   end
 
   context 'when not logged in' do
-    before(:each) do
-      visit root_path
-    end
+    before(:each) { visit root_path }
 
     it 'has a Sign in link' do
       expect(page).to have_link('Sign in', href: login_path)
@@ -31,19 +29,26 @@ describe 'user authentication', type: :feature do
   end
 
   context 'when logged in' do
-
-    it 'logs in an existing user' do
+    before(:each) do
       user = FactoryGirl.create(:user)
       visit login_path
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
       click_button 'Login'
+    end
+
+    it 'logs in an existing user' do
       expect(page).to have_content('Logout')
     end
 
     it 'does not have a login link' do
-      expect(page).to_not have_link('Login')
+      expect(page).to_not have_link('Sign in')
+    end
+
+    it 'can logout' do
+      click_link_or_button 'Logout'
+      expect(page).to_not have_link 'Logout'
+      expect(page).to have_link 'Sign in'
     end
   end
-
 end
