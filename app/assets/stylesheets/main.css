@@ -40,14 +40,14 @@ body {
   margin-left: auto;
 }
 
-header {
+header.header {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
   padding: 10px 0 0 5px;
   width: 80%;
   background: #fff;
-  background-image: url("assets/colorado.png");
+  background-image: url("/assets/colorado.png");
   background-repeat: no-repeat;
   border-top: 6px solid #000;
   border-bottom: 6px solid #000;
