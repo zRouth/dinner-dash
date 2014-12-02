@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
+      parsed_cart = JSON.parse(user.cart.empty? ? "{}" : user.cart)
+      session[:cart] = parsed_cart unless parsed_cart.empty?
       redirect_to root_path, notice: "Welcome to DinnerDash, #{user.full_name}."
     else
       redirect_to login_path, notice: "We could not log you in. Please try again."
