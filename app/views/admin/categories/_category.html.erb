@@ -1,11 +1,11 @@
 <div class="menu-category"><%= category.title %></div><br>
 <% category.menu_items.each do |menu_item| %>
-  <div class="menu-item" categories="<%= menu_item.categories.pluck("title").join "," %>">
+  <div class="menu-item <%= menu_item.title.gsub(" ", "-").downcase %>" categories="<%= menu_item.categories.pluck("title").join "," %>">
     <div class="menu-item-img"><%= image_tag menu_item.image.url(:icon) %></div>
     <div class="menu-item-title"><h3><%= link_to menu_item.title.upcase, "/menu/#{menu_item.id}" %></h3></div>
     <div class="menu-item-description"><%= menu_item.description %></div><br>
     <%= form_tag "/menu_items/#{menu_item.id}/add_to_cart", method: :post do %>
-      <div class="menu-item-button"><%= submit_tag "Add To Cart", onclick: "atLeastOne(this.parentElement.parentElement);" %></div>
+      <div class="menu-item-button"><%= submit_tag "Add To Cart" %></div>
     <% end %>
     <div class="menu-item-price"><%= number_to_currency(menu_item.price / 100.0) %></div>
   </div>
