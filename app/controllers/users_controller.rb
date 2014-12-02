@@ -20,6 +20,9 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:notice] = "User could not be created"
+      @errors = @user.errors.map do |attribute, msg|
+        "#{attribute.to_s.gsub("_", " ").capitalize}: #{msg.downcase}"
+      end.uniq
       render :new
     end
   end
