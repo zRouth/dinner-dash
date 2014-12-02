@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :require_admin
 
-#Josh recommended that we load cart in application controller
-  # before_filter :load_cart
-  #
-  # def load_cart
-  #   @cart = session[:cart] || {}
-  # end
+  before_action :clean_cart
+
+  def clean_cart
+    session[:cart] ||= {}
+    session[:cart].delete_if { |menu_item_id, amt| !MenuItem.exists?(id: menu_item_id) || amt < 1 }
+  end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
