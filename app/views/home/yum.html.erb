@@ -3,9 +3,9 @@
     <div class="menu-item-img"><%= image_tag @menu_item.image.url(:icon) %></div>
     <div class="menu-item-title"><h3><%= @menu_item.title.upcase %></h3></div>
     <div class="menu-item-description"><%= @menu_item.description %></div><br>
-    <div style="width:50%;"><%= form_tag "/menu_items/#{@menu_item.id}/add_to_cart", method: :post do %></div>
-    <%= number_field "menu_item", "amount", :style => "width:30px;", value: @cart && @cart[menu_item.id.to_s] || 0 %>
-    <div class="menu-item-button"><%= submit_tag "Add To Cart", onclick: "atLeastOne(this.parentElement.parentElement);" %></div>
+    <%= form_tag "/menu_items/#{@menu_item.id}/add_to_cart", method: :post do %>
+    <%= number_field "menu_item", "amount", style: "width:30px;", value: session[:cart][@menu_item.id.to_s] || 0 %>
+    <div class="menu-item-button"><%= submit_tag "Add To Cart" %></div>
     <% end %>
     <div class="menu-item-price"><%= number_to_currency(@menu_item.price / 100.0) %></div>
   </div>

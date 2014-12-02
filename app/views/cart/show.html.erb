@@ -1,14 +1,16 @@
-<center>YOUR CART</center>
+<%= content_tag :center, "YOUR CART" %>
 <% unless @items_ordered.empty? %>
   <%= button_to "Clear Cart", "/cart", method: :delete %>
+<% else %>
+  <%= content_tag :h1, "No items".upcase %>
 <% end %>
 <% @items_ordered.each do |item| %>
-<div class="<%= item[:name].gsub(" ", "-").downcase %>">
-  <h2><%= item[:name] %></h2>
-  quantity: <%= item[:quantity] %>
-  <%= form_tag "/menu_items/#{item[:id]}/add_to_cart", method: :post do %>
-    <%= hidden_field "menu_item", "amount", value: "0" %>
-    <%= submit_tag "Remove From Cart" %>
+  <%= content_tag :div, class: item[:name].gsub(" ", "-").downcase do %>
+    <%= content_tag :h2, item[:name] %>
+    <%= content_tag :div, "quantity: #{item[:quantity]}" %>
+    <%= form_tag "/menu_items/#{item[:id]}/add_to_cart", method: :post do %>
+      <%= hidden_field "menu_item", "amount", value: "0" %>
+      <%= submit_tag "Remove From Cart" %>
+    <% end %>
   <% end %>
-</div>
 <% end %>
