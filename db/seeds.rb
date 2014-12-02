@@ -17,7 +17,7 @@ appetizers.menu_items.create!(title: "Miso Soup", description: "dashi, bonito, t
 appetizers.menu_items.create!(title: "Fried Octopus", description: "baby octopus, sesame, ginger, soy sauce, light fried", price: 4995)
 appetizers.menu_items.create!(title: "Edamame", description: "soy beans, soy sauce, togarashi", price: 1995)
 appetizers.menu_items.create!(title: "Tempura Veggies", description: "cauliflowers, carrots, sweet potato, broccoli", price: 5995)
-appetizers.menu_items.create!(title: "Seaweed Salad", description: "seaweed, soy sauce, scallions, ginger, cilantro, pepper flakes", price: 3241)
+seaweed_salad = appetizers.menu_items.create!(title: "Seaweed Salad", description: "seaweed, soy sauce, scallions, ginger, cilantro, pepper flakes", price: 3241)
 
 sushi.menu_items.create!(title: "Tuna", description: "blank description", price: 1247)
 sushi.menu_items.create!(title: "Spicy Tuna", description: "blank description", price: 2903)
@@ -33,7 +33,7 @@ rolls.menu_items.create!(title: "Philadelphia roll", description: "salmon, cream
 rolls.menu_items.create!(title: "Spicy tuna roll", description: "spicy tuna, sriracha mayonnaise, avocado", price: 1246)
 rolls.menu_items.create!(title: "Shrimp tempura roll", description: "shrimp tempura, cucumber, ginger, yuzu", price: 4615)
 rolls.menu_items.create!(title: "Lobster tempura roll", description: "lobster tempura, crab, sriracha mayo, avocado", price: 379)
-rolls.menu_items.create!(title: "Vegetable tempura roll", description: "califlower, sweet potato, zucchini, cucumber, yuzu", price: 3278)
+vegetable_tempura_roll = rolls.menu_items.create!(title: "Vegetable tempura roll", description: "califlower, sweet potato, zucchini, cucumber, yuzu", price: 3278)
 
 specialty_rolls.menu_items.create!(title: "Dragon roll", description: "eel, crab, avocado, topped with tuna and salmon, eel sauce", price: 3530)
 specialty_rolls.menu_items.create!(title: "Volcano roll", description: "spicy tuna, crab, salmon, ginger, spicy mayo, topped with crunch flakes.", price: 7133)
@@ -43,13 +43,13 @@ specialty_rolls.menu_items.create!(title: "Rainbow roll", description: "crab, se
 specialty_rolls.menu_items.create!(title: "Spicy tofu cream cheese roll", description: "tofu tempura, cream cheese, avocado, crunch, spicy mayo", price: 4308)
 specialty_rolls.menu_items.create!(title: "Surf and turf roll", description: "lobster, crab, avocado, spicy mayo, topped with seared kobe beef", price: 6426)
 
-vegetarian.menu_items.create!(title: "Seaweed Salad", description: "seaweed, soy sauce, scallions, ginger, cilantro, pepper flakes", price: 3241)
-vegetarian.menu_items.create!(title: "Vegetable tempura roll", description: "califlower, sweet potato, zucchini, cucumber, yuzu", price: 3278)
+vegetarian.menu_items << seaweed_salad
+vegetarian.menu_items << vegetable_tempura_roll
 vegetarian.menu_items.create!(title: "Spicy tofu cream cheese roll", description: "tofu tempura, cream cheese, avocado, crunch, spicy mayo", price: 4308)
 
 miso_soup = dairy_free.menu_items.create!(title: "Miso Soup", description: "dashi, bonito, tofu", price: 5467)
 dairy_free.menu_items.create!(title: "Edamame", description: "soy beans, soy sauce, togarashi", price: 1995)
-dairy_free.menu_items.create!(title: "Seaweed Salad", description: "seaweed, soy sauce, scallions, ginger, cilantro, pepper flakes", price: 3241)
+dairy_free.menu_items << seaweed_salad
 
 tempura.menu_items.create!(title: "Shrimp tempura roll", description: "shrimp tempura, cucumber, ginger, yuzu", price: 4615)
 tempura.menu_items.create!(title: "Lobster tempura roll", description: "lobster tempura, crab, sriracha mayo, avocado", price: 379)
