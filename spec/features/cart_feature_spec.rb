@@ -156,4 +156,34 @@ feature "the cart works" do
       expect(page).to have_content "52"
     end
   end
+
+  it "keeps the cart after logging in and clears cart when logging out" do
+    visit "/menu"
+    within(".tuna-poke") do
+      click_link_or_button "Add To Cart"
+    end
+    User.create(email: 'email@gmail.com', full_name: 'zach man',
+    password: 'password', password_confirmation: 'password')
+    visit '/login'
+    fill_in 'Email', with: 'email@gmail.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
+    expect(page).to have_content "Logout"
+
+    visit '/cart'
+    expect(page).to have_content "Tuna Poke"
+
+    click_link_or_button "Logout"
+    visit '/cart'
+    expect(page).to_not have_content "Tuna Poke"
+
+    visit '/login'
+    fill_in 'Email', with: 'email@gmail.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
+    expect(page).to have_content "Logout"
+
+    visit '/cart'
+    expect(page).to have_content "Tuna Poke"
+  end
 end
