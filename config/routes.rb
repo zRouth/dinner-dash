@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/contact' => 'home#contact'
   get '/about' => 'home#about'
 
+  get '/admin' => 'admin#index'
+
   get '/code' => redirect('https://github.com/chandracarney/dinner-dash')
 
   get '/login' => 'sessions#new'
