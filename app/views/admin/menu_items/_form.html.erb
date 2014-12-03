@@ -1,3 +1,5 @@
+<div class="adminnav"><%= link_to "Back to Admin", admin_path %></div>
+
 <div class="formfield">
 <%= form_for(@menu_item, html: {multipart: true}) do |form| %>
   <div class="field">
@@ -8,8 +10,15 @@
     <%= form.label :description %><br>
     <%= form.text_field :description, size: 50 %><br>
     <%= form.label :price %><br>
-    <%= form.text_field :price %>
+    <%= form.text_field :price %><br>
+    <span class="note">Note: price must be entered in cents. $10.00 = 1000</span><br><br>
+    This menu item appears in the following categories:<br>
+    <% @categories.each do |category| %>
+      <%= check_box_tag 'category', category.title %> <%= form.label category.title %><br>
+      <% end %>
+    <span class="note">Menu items can be placed into multiple categories. Ex. Appetizers, Vegetarian</span>
   </div>
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>

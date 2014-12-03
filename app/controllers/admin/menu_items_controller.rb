@@ -6,11 +6,13 @@ class Admin::MenuItemsController < AdminController
   end
 
   def create
-    MenuItem.create correct_params
+    item = MenuItem.create correct_params
+    item.category_ids << params[:category_id]
     redirect_to menu_items_path
   end
 
   def new
+    @categories = Category.all
     @menu_item = MenuItem.new
   end
 
