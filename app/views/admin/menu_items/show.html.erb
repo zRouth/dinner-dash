@@ -1,5 +1,13 @@
-<p>ID: <%= @menu_item.id %></p>
-<p>Title: <%= @menu_item.title %></p>
-<%= link_to "Delete", @menu_item, method: :delete, data: { confirm: "You really want to delete this? Really? Fo real?" } %>
-<%= link_to "Edit", edit_menu_item_path(@menu_item) %>
-<%= link_to "Back", menu_items_path %>
+<div class="adminnav"><%= link_to "Back to Admin", admin_path %></div>
+
+<div class="adminedit">
+  <div class="menu-item-admin">
+    <p>ID: <%= @menu_item.id %></p>
+    <p>Title: <%= @menu_item.title %></p>
+    <%= link_to "Delete", @menu_item, method: :delete, data: { confirm: "You really want to delete this? Really? Fo real?" } %> |
+    <%= link_to "Edit", edit_menu_item_path(@menu_item) %> |
+    <%= link_to "Back", menu_items_path %>
+  </div>
+</div>
+
+<div style="clear: both;"></div>

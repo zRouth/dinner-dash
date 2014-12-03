@@ -1,6 +1,18 @@
-<h2>CATEGORIES</h2>
-<h3><%= link_to "New", new_category_path %></h3>
+<div class="adminnav"><%= link_to "Back to Admin", admin_path %></div>
+
+<div class="adminwrapper">
+  <h2>CATEGORIES</h2>
+  <p>These are your menu categories. <strong>These categories do not change often</strong> (the DAIRY-FREE category was added most recently after AllergyGate 2014).<br>
+    おつかれさま。= Thank you for your hard work.</p>
+  <div class="adminnew"><%= link_to "Create New Category", new_category_path %></div>
+</div>
+
 <% @categories.each do |category| %>
+<div class=menu-item-admin>
   <p>ID: <%= category.id %><br>
   <%= link_to "Title: #{category.title}", category_path(category) %></p>
+  <div class="menu-item-button"><%= button_to "Manage", category_path(category), method: :get %></div>
+
+</div>
 <% end %>
+<div style="clear: both;"></div>
