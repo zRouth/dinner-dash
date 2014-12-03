@@ -104,6 +104,26 @@ feature "orders work" do
     expect(page).to have_content "$48.48"
     expect(page).to have_content "$30.30"
     expect(page).to have_content "$78.78"
+  end
 
+  it "has a link to the menu items" do
+    visit "/menu"
+    within(".tuna-poke") do
+      click_link_or_button "Add To Cart"
+    end
+    User.create(email: 'email@gmail.com', full_name: 'zach man',
+                password: 'password', password_confirmation: 'password')
+    visit '/login'
+    fill_in 'Email', with: 'email@gmail.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
+    expect(page).to have_content "Logout"
+
+    click_link_or_button 'view-cart'
+    click_link_or_button 'Checkout'
+    click_link_or_button 'Place Order'
+
+    visit '/my_orders'
+    expect(page).to have_link("Tuna Poke", href: "/menu/#{MenuItem.find_by(title: "Tuna Poke").id}")
   end
 end

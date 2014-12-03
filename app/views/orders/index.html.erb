@@ -7,5 +7,6 @@
   <div class="items-in-this-order">
     <%= render partial: "orders/order_menu_item", collection: order.order_menu_items %>
   </div>
+  Your order was placed at <%= order.created_at %>
 </div>
 <% end %>
