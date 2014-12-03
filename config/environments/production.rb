@@ -79,9 +79,9 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :fog,
     :fog_credentials => {
-      :provider => 'AWS',
+      :provider => "AWS",
       :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :aws_secret_access_key => ['AWS_SECRET_ACCESS_KEY']
+      :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     },
     :fog_directory => ENV['S3_BUCKET_NAME'],
     :default_url => "http://s3.amazonaws.com/dinnerdash/missing.gif"
