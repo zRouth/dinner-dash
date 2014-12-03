@@ -3,10 +3,6 @@
   Name: <%= user.full_name %><br>
   Username: <%= user.user_name %><br>
   Email: <%= user.email %><br>
-  <h4>Your order:</h4>
-  <div class="items-in-this-order">
-    <%= render partial: "orders/order_menu_item", collection: order.order_menu_items %>
-  </div>
-  Your order was placed at <%= order.created_at %>
+  <%= render partial: "/orders/order", locals: {order: order} %>
 </div>
 <% end %>
