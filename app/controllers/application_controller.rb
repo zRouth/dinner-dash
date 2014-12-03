@@ -12,8 +12,7 @@ class ApplicationController < ActionController::Base
     session[:cart] ||= {}
     session[:cart].delete_if { |menu_item_id, amt| !MenuItem.exists?(id: menu_item_id) || amt < 1 }
     if current_user
-      current_user.cart = session[:cart].to_json
-      current_user.save
+      current_user.update_attributes(cart: session[:cart].to_json)
     end
   end
 
