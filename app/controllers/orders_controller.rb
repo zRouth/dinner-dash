@@ -28,4 +28,12 @@ class OrdersController < ApplicationController
       @orders = Order.for_user(current_user)
     end
   end
+
+  def new
+    @total_cost = session[:cart].map { |id, quant| MenuItem.find(id).price * quant }.reduce(0,:+)
+    @items_ordered = session[:cart].map do |id, quantity|
+      menu_item = MenuItem.find(id)
+      {price: menu_item.price, name: menu_item.title, quantity: quantity}
+    end
+  end
 end

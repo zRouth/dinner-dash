@@ -13,4 +13,10 @@ class Order < ActiveRecord::Base
   def delivery?
     delivery
   end
+
+  def total_cost
+    order_menu_items.reduce(0) do |sum, order_menu_item|
+    sum + order_menu_item.cost
+    end
+  end
 end

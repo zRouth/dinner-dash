@@ -1,0 +1,5 @@
+Amount: <%= order_menu_item.quantity %> |
+<%= order_menu_item.menu_item.title %>:
+<%= number_to_currency(order_menu_item.menu_item.price / 100.0) %>
+Subtotal: <%= number_to_currency(order_menu_item.cost / 100.0) %>
+<br>

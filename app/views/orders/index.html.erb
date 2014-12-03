@@ -5,11 +5,7 @@
   Email: <%= user.email %><br>
   <h4>Your order:</h4>
   <div class="items-in-this-order">
-    <% order.order_menu_items.each do |order_menu_item| %>
-      Amount: <%= order_menu_item.quantity %> |
-      <%= order_menu_item.menu_item.title %>:
-      <%= number_to_currency(order_menu_item.menu_item.price / 100.0) %><br>
-    <% end %>
+    <%= render partial: "orders/order_menu_item", collection: order.order_menu_items %>
   </div>
 </div>
 <% end %>
