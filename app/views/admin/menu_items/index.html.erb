@@ -1,7 +1,14 @@
 <h2>MENU ITEMS</h2>
 <p><%= link_to "New", new_menu_item_path %></p>
+
 <% @menu_items.each do |menu_item| %>
+<div class=menu-item-admin>
+  <div class="menu-item-img"><%= image_tag menu_item.image.url(:icon) %></div>
   <p><%= link_to "Title: #{menu_item.title}", menu_item_path(menu_item) %><br>
   <%= menu_item.description %><br>
-  <%= menu_item.price %></p>
+  <div class="menu-item-button"><%= button_to "More Info", menu_item_path(menu_item), method: :get %></div>
+  <div class="menu-item-price"><%= menu_item.price %></div>
+</div>
 <% end %>
+
+<div style="clear: both;"></div>

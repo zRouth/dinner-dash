@@ -239,6 +239,28 @@ subnav a:hover {
   color: #ff0000;
 }
 
+.menu-item-admin {
+  border: 1px solid #ff0000;
+  border-right: 25px solid #ff0000;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 5px;
+  background: #fff;
+  width: 28%;
+  float: left;
+  height: 100px;
+}
+
+.menu-item-admin a {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.menu-item-admin a:hover {
+  text-decoration: none;
+  color: #669ae2;
+}
+
 .yum {
   background-image: url("/assets/deliciousarrow.png");
   background-repeat: no-repeat;
