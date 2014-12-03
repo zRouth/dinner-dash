@@ -16,4 +16,12 @@ class User < ActiveRecord::Base
   def is_admin?
     admin
   end
+
+  def json_cart
+    cart.empty? ? "{}" : cart
+  end
+
+  def parsed_cart
+    JSON.parse(json_cart)
+  end
 end
