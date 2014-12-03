@@ -1,0 +1,7 @@
+<h4>Your order:</h4>
+<div class="items-in-this-order">
+  <%= render partial: "orders/order_menu_item", collection: order.order_menu_items %>
+</div>
+Your order was placed at <%= order.created_at %><br>
+At <%= order.updated_at %> the status was changed to: <%= order.status %><br>
+Total cost: <%= number_to_currency(order.total_cost / 100.0) %>

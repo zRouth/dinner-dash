@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   post '/menu_items/:id/add_to_cart' => 'cart#update'
 
   get '/orders' => 'orders#index'
+  post '/orders' => 'orders#create'
+  get '/checkout' => 'orders#new'
+  get '/my_orders' => 'orders#show'
 
   # namespace :admin do
   #

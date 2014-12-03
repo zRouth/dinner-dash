@@ -1,10 +1,10 @@
 <header class="header">
   <img src="/assets/lumberjack.png" alt="Japanese Lumberjack">
   <subnav>
+    <%= link_to "Shopping cart (#{session[:cart].values.reduce(0, :+)})", "/cart", id: "view-cart" %> |
     <% if current_user && current_user.is_admin? %>
       <div class="adminbutton"><%= link_to "ADMIN", admin_path %></div> |
       <% end %>
-    <%= link_to "Shopping cart (#{session[:cart].values.reduce(0, :+)})", "/cart" %> |
     <% if current_user %>
       <%= link_to "Logout", logout_path, id: 'logout', method: 'delete' %>
     <% else %>
