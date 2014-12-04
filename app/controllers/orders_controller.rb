@@ -35,6 +35,7 @@ class OrdersController < ApplicationController
     unless current_user
       redirect_to :back, notice: "Please log in to view your orders"
     else
+      @user = current_user
       @orders = Order.for_user(current_user)
     end
   end
