@@ -112,7 +112,7 @@ feature "the cart works" do
     visit "/menu"
     click_link_or_button "Tuna Poke".upcase
     fill_in "menu_item[amount]", with: 666
-    click_link_or_button "Add Quantity"
+    click_link_or_button "Add Quantity to Cart"
 
     visit "/cart"
     within(".tuna-poke") do

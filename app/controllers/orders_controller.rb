@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   def create_order
     deliv = params[:order][:delivery] == "1"
     address = Address.new(address_params) if deliv
-    if address.save || !deliv
+    if !deliv || address.save
       current_user.orders.create(delivery: deliv) do |order|
         order.address = address if deliv
         session[:cart].each do |menu_item_id, total|
