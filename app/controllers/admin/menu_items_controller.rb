@@ -7,7 +7,7 @@ class Admin::MenuItemsController < AdminController
 
   def create
     item = MenuItem.create correct_params
-    item.category_ids << params[:category_id]
+    item.category_ids = params[:category].keys.map(&:to_i) if params[:category]
     redirect_to menu_items_path
   end
 
@@ -17,7 +17,8 @@ class Admin::MenuItemsController < AdminController
   end
 
   def edit
-    @menu_item = MenuItem.find(params[:id])
+    @categories = Category.all
+    @menu_item = MenuItem.includes(:categories).find(params[:id])
   end
 
   def show
@@ -28,6 +29,7 @@ class Admin::MenuItemsController < AdminController
   def update
     @menu_item = MenuItem.find(params[:id])
     @menu_item.update(correct_params)
+    @menu_item.category_ids = params[:category].keys.map(&:to_i) if params[:category]
     redirect_to menu_items_path(@menu_item)
   end
 

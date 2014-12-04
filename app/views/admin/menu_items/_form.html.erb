@@ -14,8 +14,8 @@
     <span class="note">Note: price must be entered in cents. $10.00 = 1000</span><br><br>
     This menu item appears in the following categories:<br>
     <% @categories.each do |category| %>
-      <%= check_box_tag 'category', category.title %> <%= form.label category.title %><br>
-      <% end %>
+      <%= check_box_tag "category[#{category.id}]", category.title, @menu_item.categories.include?(category) %> <%= form.label category.title %><br>
+    <% end %>
     <span class="note">Menu items can be placed into multiple categories. Ex. Appetizers, Vegetarian</span>
   </div>
   <br>
