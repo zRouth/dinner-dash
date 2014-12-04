@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
   def create
     unless current_user
-      redirect_to :back, notice: "Please log in or sign up to place an order"
+      redirect_to login_path, notice: "Please log in or sign up to place an order"
     else
       if create_order
         redirect_to "/my_orders"
@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
 
   def my_orders
     unless current_user
-      redirect_to :back, notice: "Please log in to view your orders"
+      redirect_to login_path, notice: "Please log in to view your orders"
     else
       @user = current_user
       @orders = Order.for_user(current_user)
