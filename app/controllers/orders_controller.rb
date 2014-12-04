@@ -46,6 +46,12 @@ class OrdersController < ApplicationController
       menu_item = MenuItem.find(id)
       {price: menu_item.price, name: menu_item.title, quantity: quantity}
     end
+    @state_abbrs = [ "AA", "AE", "AK", "AL", "AP", "AR", "AS", "AZ", "CA", "CO", "CT",
+      "DC", "DE", "FL", "FM", "GA", "GU", "HI", "IA", "ID", "IL", "IN",
+      "KS", "KY", "LA", "MA", "MD", "ME", "MH", "MI", "MN", "MO", "MP",
+      "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH",
+      "OK", "OR", "PA", "PR", "PW", "RI", "SC", "SD", "TN", "TX", "UT",
+      "VA", "VI", "VT", "WA", "WI", "WV", "WY"]
   end
 
   def show
