@@ -17,12 +17,17 @@
 
       <% if %w(ordered paid).include? @order.status %>
       <% @order.order_menu_items.each do |order_menu_item| %>
-        <br>
-        <%= number_field_tag "menu_item[#{order_menu_item.menu_item.id}]", order_menu_item.quantity, style: "width:30px;" %>
-        <%= order_menu_item.menu_item.title %>
+          <br>
+          <%= number_field_tag "menu_item[#{order_menu_item.menu_item.id}]", order_menu_item.quantity, style: "width:30px;" %>
+          <%= order_menu_item.menu_item.title %>
+        <% end %>
+        <br><br>
+        <div class="note">
+          To remove an item from this order, set the quantity to 0.
+        </div>
       <% end %>
-    <% end %>
-    <br><br>
+      <br><br>
+
     <%= f.submit %>
     <% end %>
   </div>
