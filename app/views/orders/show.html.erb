@@ -1,5 +1,14 @@
-<% @orders.each do |order| user = order.user %>
-<div style="border: 1px solid black; margin: 10px; padding: 10px;">
-  <%= render partial: "/orders/order", locals: {order: order} %>
-</div>
+<%= form_for @order do |f| %>
+  <%= f.select :status, %w(paid completed ordered cancelled) %>
+
+  <% if %w(ordered paid).include? @order.status %>
+    <% @order.order_menu_items.each do |order_menu_item| %>
+      <br>
+      <%= order_menu_item.menu_item.title %>
+      <%= number_field_tag "menu_item[#{order_menu_item.menu_item.id}]", order_menu_item.quantity %>
+    <% end %>
+  <% end %>
+  <br>
+  <%= f.submit %>
 <% end %>
+<%= render partial: "/orders/order", locals: {order: @order} %>
