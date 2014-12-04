@@ -31,7 +31,8 @@ hr {
 
 .page-wrapper {
   margin: 0;
-  width: 80%;
+  /*width: 80%;*/
+  width: 1160px;
   position: relative;
   margin-right: auto;
   margin-left: auto;
@@ -107,7 +108,8 @@ nav {
   font-family: 'Lato', sans-serif;
   /*font-family: SamuraiBob;*/
   font-weight: 900;
-  font-size: 2vw;
+  font-size: 2em;
+  /*font-size: 2vw;*/
 }
 
 nav ul {
