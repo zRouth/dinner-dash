@@ -7,8 +7,9 @@ class CartController < ApplicationController
   def show
     @items_ordered = session[:cart].map do |id, quantity|
       menu_item = MenuItem.find(id)
-      {id: menu_item.id, name: menu_item.title, quantity: quantity}
+      {id: menu_item.id, name: menu_item.title, quantity: quantity, price: menu_item.price}
     end
+    @total_cost = session[:cart].map { |id, quant| MenuItem.find(id).price * quant }.reduce(0,:+)
   end
 
   def update

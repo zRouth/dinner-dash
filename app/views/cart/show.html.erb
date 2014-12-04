@@ -1,19 +1,22 @@
-<%= content_tag :center, "YOUR CART" %>
-<% unless @items_ordered.empty? %>
-  <%= button_to "Clear Cart", "/cart", method: :delete, onclick: "return confirm('Are you sure you want to clear your cart?');" %>
+<h2><%= content_tag :center, "YOUR CART" %></h2>
 
-  <%= button_to "Checkout", "/checkout", method: :get %>
+</i>
+<div class="orderwrapper">
+
+<% unless @items_ordered.empty? %>
 <% else %>
   <%= content_tag :h1, "No items".upcase %>
 <% end %>
 <% @items_ordered.each do |item| %>
-<div style="margin: 10px; padding: 10px; border: 1px solid #000;">
   <%= content_tag :div, class: item[:name].gsub(" ", "-").downcase do %>
-    <%= content_tag :h2, item[:name] %>
-    <%= content_tag :div, "quantity: #{item[:quantity]}" %>
+    <%= content_tag :h3, item[:name] %><br>
+
+    <h3>Amount: <%= item[:quantity] %> |
+    <%= number_to_currency(item[:price] / 100.0) %></h3>
 
     <br>
 
+    Subtotal: <%= number_to_currency(item[:price].to_i * item[:quantity].to_i / 100.0) %>
     <%= form_tag "/menu_items/#{item[:id]}/add_to_cart", method: :post do %>
       <%= number_field "menu_item", "amount", style: "width:30px;", value: session[:cart][item[:id].to_s] || 0 %>
       <div class="menu-item-button"><%= submit_tag "Update Quantity" %></div>
@@ -25,6 +28,10 @@
       <%= hidden_field "menu_item", "amount", value: "0" %>
       <%= submit_tag "Remove From Cart" %>
     <% end %>
+    <%= button_to "Clear Cart", "/cart", method: :delete, onclick: "return confirm('Are you sure you want to clear your cart?');" %><br>
+    Total: <%= number_to_currency(@total_cost / 100.0) %>
+
+    <%= button_to "Checkout", "/checkout", method: :get %>
   <% end %>
-</div>
 <% end %>
+</div>
