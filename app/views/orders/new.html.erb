@@ -24,7 +24,7 @@
   <%= f.label :city, "City" %>
   <%= text_field_tag "address[city]" %><br>
   <%= f.label :state, "State" %>
-  <%= text_field_tag "address[state]" %><br>
+  <%= select_tag "address[state]", options_for_select(@state_abbrs) %><br>
   <%= f.label :zip, "Zip Code" %>
   <%= text_field_tag "address[zip]" %><br>
 
