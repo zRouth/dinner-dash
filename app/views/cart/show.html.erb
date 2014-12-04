@@ -1,37 +1,48 @@
-<h2><%= content_tag :center, "YOUR CART" %></h2>
+<h2><%= content_tag :center, "SHOPPING CART" %></h2>
+<center><p>どのようなごちそう！= What a feast!</p></center>
 
-</i>
 <div class="orderwrapper">
 
-<% unless @items_ordered.empty? %>
-<% else %>
-  <%= content_tag :h1, "No items".upcase %>
-<% end %>
-<% @items_ordered.each do |item| %>
-  <%= content_tag :div, class: item[:name].gsub(" ", "-").downcase do %>
-    <%= content_tag :h3, item[:name] %><br>
+  <% unless @items_ordered.empty? %>
 
-    <h3>Amount: <%= item[:quantity] %> |
-    <%= number_to_currency(item[:price] / 100.0) %></h3>
 
-    <br>
 
-    Subtotal: <%= number_to_currency(item[:price].to_i * item[:quantity].to_i / 100.0) %>
+<div class="cartinfo">
+  <h2>You are one step closer to fresh, delicious sushi!</h2>
+  <p>Nokogiri Sushi is open <strong>24 hours a day, 7 days a week</strong> for pickup or delivery!</p>
+</div>
+
+
+<div class="cartitems">
+  <h3>YOUR CART CURRENTLY CONTAINS:</h3>
+
+  <% @items_ordered.each do |item| %>
+  <p><%= content_tag :div, class: item[:name].gsub(" ", "-").downcase do %>
+    <strong><%= item[:name] %></strong><br>
+    Quantity: <%= item[:quantity] %> |
+    <%= number_to_currency(item[:price] / 100.0) %></p>
+
+    <div class="subtotal">Subtotal: <%= number_to_currency(item[:price].to_i * item[:quantity].to_i / 100.0) %></div>
+
     <%= form_tag "/menu_items/#{item[:id]}/add_to_cart", method: :post do %>
       <%= number_field "menu_item", "amount", style: "width:30px;", value: session[:cart][item[:id].to_s] || 0 %>
       <div class="menu-item-button"><%= submit_tag "Update Quantity" %></div>
     <% end %>
 
-    <br>
-
     <%= form_tag "/menu_items/#{item[:id]}/add_to_cart", method: :post do %>
       <%= hidden_field "menu_item", "amount", value: "0" %>
       <%= submit_tag "Remove From Cart" %>
     <% end %>
-    Total: <%= number_to_currency(@total_cost / 100.0) %>
-
+    <% end %>
   <% end %>
-<% end %>
-<%= button_to "Clear Cart", "/cart", method: :delete, onclick: "return confirm('Are you sure you want to clear your cart?');" %><br>
-<%= button_to "Checkout", "/checkout", method: :get %>
+
+  <div class="total">Total: <%= number_to_currency(@total_cost / 100.0) %></div>
+  <br><br>
+  <div class="subtotal"><%= button_to "Clear Cart", "/cart", method: :delete, onclick: "return confirm('Are you sure you want to clear your cart?');" %> <%= button_to "Checkout", "/checkout", method: :get %></div>
+  <% else %>
+    <%= content_tag :h1, "No items".upcase %>
+  <% end %>
+</div>
+
+  <div style="clear:both;"></div>
 </div>

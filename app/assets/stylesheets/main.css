@@ -543,6 +543,17 @@ subnav a:hover {
   margin-top: 5px;
 }
 
+/*cart styles*/
+.cartinfo {
+  float: left;
+  width: 45%;
+}
+
+.cartitems {
+  float: right;
+  width: 45%;
+}
+
 /*footer styles*/
 
 footer {
