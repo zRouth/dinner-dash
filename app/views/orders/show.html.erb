@@ -1,5 +1,5 @@
 <% @orders.each do |order| user = order.user %>
-<div style="border: 1px solid black; margin: 10px; padding: 10px;">
+<div class="orderwrapper">
   <%= render partial: "/orders/order", locals: {order: order} %>
 </div>
 <% end %>
