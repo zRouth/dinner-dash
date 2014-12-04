@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  def show
+  def my_orders
     unless current_user
       redirect_to :back, notice: "Please log in to view your orders"
     else
@@ -46,6 +46,24 @@ class OrdersController < ApplicationController
       menu_item = MenuItem.find(id)
       {price: menu_item.price, name: menu_item.title, quantity: quantity}
     end
+  end
+
+  def show
+    @order = Order.includes(:user, order_menu_items: :menu_item).find(params[:id])
+  end
+
+  def update
+    order = Order.includes(:order_menu_items).find(params[:id])
+    order.update_attributes status: params[:order][:status]
+    params[:menu_item].each do |menu_item_id, quantity|
+      order_menu_item = order.order_menu_items.find_by(menu_item_id: menu_item_id)
+      if quantity.to_i > 0
+        order_menu_item.update_attributes quantity: quantity
+      else
+        order_menu_item.delete
+      end
+    end
+    redirect_to :back
   end
 
   private
