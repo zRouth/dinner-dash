@@ -49,8 +49,8 @@ feature "the cart works" do
 
     visit "/cart"
     within(".miso-soup") do
-      expect(page).to_not have_content "1"
-      expect(page).to have_content "3"
+      expect(page).to_not have_content "Amount: 1"
+      expect(page).to have_content "Amount: 3"
     end
   end
 
@@ -116,8 +116,8 @@ feature "the cart works" do
 
     visit "/cart"
     within(".tuna-poke") do
-      expect(page).to_not have_content "1"
-      expect(page).to have_content "666"
+      expect(page).to_not have_content "Amount: 1"
+      expect(page).to have_content "Amount: 666"
     end
   end
 
@@ -136,8 +136,8 @@ feature "the cart works" do
     visit "/cart"
     expect(page).to have_content "Item in both"
     within(".item-in-both") do
-      expect(page).to_not have_content "1"
-      expect(page).to have_content "2"
+      expect(page).to_not have_content "Amount: 1"
+      expect(page).to have_content "Amount: 2"
     end
   end
 
@@ -152,8 +152,8 @@ feature "the cart works" do
       click_link_or_button "Update Quantity"
     end
     within(".tuna-poke") do
-      expect(page).to_not have_content "1"
-      expect(page).to have_content "52"
+      expect(page).to_not have_content "Amount: 1"
+      expect(page).to have_content "Amount: 52"
     end
   end
 
