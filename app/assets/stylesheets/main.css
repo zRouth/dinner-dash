@@ -265,6 +265,10 @@ subnav a:hover {
   color: #669ae2;
 }
 
+.menu-item-quantity {
+    float: left;
+}
+
 .yum {
   background-image: url("/assets/deliciousarrow.png");
   background-repeat: no-repeat;
@@ -474,6 +478,45 @@ subnav a:hover {
 .contact-wrapper p {
   font-family: 'Lato', sans-serif;
   text-align: center;
+}
+
+/*order styles*/
+.orderwrapper {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin: 15px;
+  padding: 20px;
+}
+
+.orderinfo {
+  float: left;
+  width: 45%;
+}
+
+.orderitems {
+  float: right;
+  width: 45%;
+}
+
+.orderitems a {
+  color: #669ae2;
+  text-decoration: none;
+}
+
+.orderitems a:hover {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.subtotal {
+  margin-left: 50px;
+  float: right;
+}
+
+.total {
+  float: right;
+  border-top: 1px solid #ccc;
+  margin-top: 5px;
 }
 
 /*footer styles*/
