@@ -28,10 +28,10 @@
       <%= hidden_field "menu_item", "amount", value: "0" %>
       <%= submit_tag "Remove From Cart" %>
     <% end %>
-    <%= button_to "Clear Cart", "/cart", method: :delete, onclick: "return confirm('Are you sure you want to clear your cart?');" %><br>
     Total: <%= number_to_currency(@total_cost / 100.0) %>
 
-    <%= button_to "Checkout", "/checkout", method: :get %>
   <% end %>
 <% end %>
+<%= button_to "Clear Cart", "/cart", method: :delete, onclick: "return confirm('Are you sure you want to clear your cart?');" %><br>
+<%= button_to "Checkout", "/checkout", method: :get %>
 </div>
