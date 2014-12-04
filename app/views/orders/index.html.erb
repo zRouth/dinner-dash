@@ -8,9 +8,9 @@
     <strong>Name:</strong> <%= user.full_name %><br>
     <strong>Username:</strong> <%= user.user_name %><br>
     <strong>Email:</strong> <%= user.email %><br>
-  <%= link_to "ORDER PAGE", order_path(order) %>
+    <br>
+    <%= button_to "Manage this Order", order_path(order), method: :get %><br>
 
-<br>
     <div class="note">This order was placed at <%= order.created_at %><br>
       At <%= order.updated_at %> the status was changed to: <%= order.status %></div>
   </div>
