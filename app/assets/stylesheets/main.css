@@ -73,7 +73,8 @@ h1 {
   font-family: SamuraiBob;
   text-align: center;
   /*float: right;*/
-  font-size: 10vw;
+  /*font-size: 10vw;*/
+  font-size: 10em;
 }
 
 h2 {
@@ -97,7 +98,8 @@ nav {
   text-align: center;
   background: #fff;
   height: 50px;
-  width: 50%;
+  width: 580px;
+  /*width: 50%;*/
   border-top: 20px solid #000;
   border-left: 20px solid #fff;
   position: relative;
