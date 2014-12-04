@@ -5,12 +5,15 @@
 <p>These are all Nokogiri orders since the dawn of time, a megalist of what's paying our salaries! Always treat them &mdash; and the customers who place them &mdash; with respect.<br>
   おつかれさま。= Thank you for your hard work.</p>
 
-<p>Sort by order status: *insert f.select here?* </p>
+<p>Sort by order status:
+  <%= select_tag "status-sort", options_for_select(%w(All Paid Completed Ordered Cancelled)) %><br>
+  Showing <%= content_tag :span, @orders.length, id: "show-amt" %> Orders
+</p>
 </div>
 
 <% @orders.each do |order| user = order.user %>
 
-<div class="orderwrapper">
+<div class="orderwrapper <%= "status-#{order.status}" %>">
   <div class="orderinfo">
     <strong>Name:</strong> <%= user.full_name %><br>
     <strong>Username:</strong> <%= user.user_name %><br>
