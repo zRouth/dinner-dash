@@ -55,6 +55,6 @@ class OrdersController < ApplicationController
   end
 
   def address_params
-    params.require(:address).permit(:street_name, :street, :city, :state, :zip)
+    params.require(:address).permit(:street_number, :street, :city, :state, :zip)
   end
 end

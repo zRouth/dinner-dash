@@ -14,7 +14,6 @@
   <% end %>
   Total order price: <%= number_to_currency(@total_cost / 100.0) %>
 
-
 </div>
 <%= form_for @order do |f| %>
   Delivery? <%= f.check_box :delivery %><br>
