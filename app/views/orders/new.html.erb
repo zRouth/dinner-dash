@@ -1,5 +1,5 @@
 <h4>Your order:</h4>
-<div style="border: 1px solid black; margin: 10px; padding: 10px;">
+<div class="orderwrapper">
   <% @items_ordered.each do |item| %>
     <div class="items-in-this-order">
       <%= item[:name] %> total:
