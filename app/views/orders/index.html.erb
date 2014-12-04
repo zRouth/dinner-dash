@@ -2,11 +2,13 @@
 <div style="clear: both;"></div>
 
 <% @orders.each do |order| user = order.user %>
+
 <div class="orderwrapper">
   <div class="orderinfo">
     <strong>Name:</strong> <%= user.full_name %><br>
     <strong>Username:</strong> <%= user.user_name %><br>
     <strong>Email:</strong> <%= user.email %><br>
+  <%= link_to "ORDER PAGE", order_path(order) %>
 
 <br>
     <div class="note">This order was placed at <%= order.created_at %><br>
