@@ -1,4 +1,4 @@
-Amount: <%= order_menu_item.quantity %> |
+Quantity: <%= order_menu_item.quantity %> |
 <%= link_to order_menu_item.menu_item.title, "/menu/#{order_menu_item.menu_item_id}" %>:
 <%= number_to_currency(order_menu_item.menu_item.price / 100.0) %>
 <div class="subtotal">Subtotal: <%= number_to_currency(order_menu_item.cost / 100.0) %></div><br>

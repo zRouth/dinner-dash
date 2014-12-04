@@ -1,37 +1,48 @@
 <h2><%= content_tag :center, "YOUR ORDER" %></h2>
 <div class="orderwrapper">
+
+  <div class="orderinfo">
+    <%= form_for @order do |f| %>
+
+    <p>If you're picking up your order, head on over to Nokogiri! Orders take about 25 minutes to prepare.</p>
+    <p>Don't feel like getting up? <strong>Check here for delivery</strong> <%= f.check_box :delivery %><br>
+      <div class="note">*All fields are required for delivery.</div><br>
+
+      <%= text_field_tag "address[street_number]"%><br>
+      <p class="note">Street Number</p>
+      <%= text_field_tag "address[street]" %><br>
+      <p class="note">Street</p>
+      <%= text_field_tag "address[city]" %><br>
+      <p class="note">City</p>
+      <%= select_tag "address[state]", options_for_select(@state_abbrs) %><br>
+      <p class="note">State</p>
+      <%= text_field_tag "address[zip]" %>
+      <p class="note">5-Digit Zip Code</p>
+      <br><br>
+
+      <%= f.submit "Place Order" %>
+      <% end %>
+    </div>
+
+  <div class="orderitems">
+    <br>
+    <h3>ITEMS</h3>
+    <br>
   <% @items_ordered.each do |item| %>
     <div class="items-in-this-order">
-      <%= item[:name] %> total:
-      <%= number_to_currency(item[:quantity].to_i * item[:price].to_i / 100.0 ) %>
+      <strong><%= item[:name] %></strong>
       <br>
       Quantity: <%= item[:quantity] %> at
       <%= number_to_currency(item[:price] / 100.0) %> each
       <br>
+      <div class="subtotal">Subtotal: <%= number_to_currency(item[:quantity].to_i * item[:price].to_i / 100.0 ) %></div>
+
       <br>
 
     </div>
   <% end %>
-  Total order price: <%= number_to_currency(@total_cost / 100.0) %>
+  <div class="total">Total: <%= number_to_currency(@total_cost / 100.0) %></div>
+  </div>
 
-</div>
-<div class="orderwrapper">
-<%= form_for @order do |f| %>
-
-  <p>For pickup, come to to Nokogiri in 45 minutes.</p>
-  Delivery? <%= f.check_box :delivery %><br>
-<div class="note">*All fields are required for delivery.</div><br>
-  <%= f.label :street_number, "Street Number"%>
-  <%= text_field_tag "address[street_number]" %><br>
-  <%= f.label :street, "Street" %>
-  <%= text_field_tag "address[street]" %><br>
-  <%= f.label :city, "City" %>
-  <%= text_field_tag "address[city]" %><br>
-  <%= f.label :state, "State" %>
-  <%= select_tag "address[state]", options_for_select(@state_abbrs) %><br>
-  <%= f.label :zip, "5-Digit Zip Code" %>
-  <%= text_field_tag "address[zip]" %><br><br>
-
-  <%= f.submit "Place Order" %>
-<% end %>
+<div style="clear:both;"></div>
 </div>
