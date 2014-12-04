@@ -25,6 +25,10 @@ body {
   color: #ff0000;
 }
 
+hr {
+  color: #edeaea;
+}
+
 .page-wrapper {
   margin: 0;
   width: 80%;
