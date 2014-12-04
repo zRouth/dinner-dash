@@ -1,20 +1,19 @@
 <div class="about-us">About Us</div><br>
   <div class="profile-wrapper">
     <p>Piranha Black mackerel shortnose chimaera Black tetra North Pacific daggertooth <strong>orangespine unicorn fish</strong> flatfish European chub. Sardine paddlefish grunt cornetfish Sundaland noodlefish ribbon sawtail fish marblefish opaleye topminnow. Topminnow pelagic cod spiny dwarf catfish Black swallower thornyhead garden eel. Hog sucker tube-eye sheepshead ilisha burma danio.</p>
-
-      <p>Climbing perch ronquil false trevally sleeper; skate ballan wrasse tenuis frogfish pipefish clown triggerfish perch Gila trout; sergeant major. Worm eel needlefish píntano porgy armorhead chubsucker, mummichog velvet-belly shark sheatfish grass carp archerfish queen triggerfish river loach john dory, "Old World knifefish." Lake trout spearfish rudd píntano molly yellowtail barracuda herring false cat shark arrowtooth eel. Electric stargazer pike conger queen danio: lemon shark. Conger eel yellowfin surgeonfish, "cowfish, catla monkfish," South American darter.</p>
-
     <% @profiles.each do |name, github_username| %>
       <div class="profiles">
         <h2><%= link_to name.upcase, "https://github.com/#{github_username}" %></h2>
         <%= link_to image_tag("#{name}.jpg", border: 0, alt: name, width: "40%"), "https://github.com/#{github_username}" %>
-        <p>
-          Alex has enjoyed his time growing up in rural Alaska, hunting fresh salmon with the bears every year. When he is not wading in the icey rivers, he enjoys long walks in the wilderness.
-          Chandra has found that she works best
-          Kate is known for picking fresh seaweed off the ocean floor. W
-        </p>
       </div>
     <% end %>
+    <div class="profiles"><p><strong>Alex</strong> has enjoyed his time growing up in rural Alaska, hunting fresh salmon with the bears every year. When he is not wading in the icey rivers, he enjoys long walks in the wilderness with his pet capybara, Jorge.</p></div>
+    <div class="profiles"><p><strong>Chandra</strong> has found that she works best in the rice fields, gathering sushi sandwiches and aging rice wine in her spare time. She finds joy in eating wasabi for breakfast and understanding the needs of coffee and cream cheese.</p></div>
+    <div class="profiles"><p><strong>Kate</strong> is known for picking fresh seaweed off the ocean floor; she often encouters sharks and finds that gently stroking them behind the right ear calms their nerves. She has won medals for her fresh seaweed.</p></div>
+    <div class="profiles"><p><strong>Zach</strong> has worked rigorously with Alex's bears to teach them how to make sushi. Occasionally one of the bears tries to eat Alex, but Zach is always there to remind the bears that we at Nokogiri sushi frown upon harassment.</p></div>
+
+    <p>Climbing perch ronquil false trevally sleeper; skate ballan wrasse tenuis frogfish pipefish clown triggerfish perch Gila trout; sergeant major. Worm eel needlefish píntano porgy armorhead chubsucker, mummichog velvet-belly shark sheatfish grass carp archerfish queen triggerfish river loach john dory, "Old World knifefish." Lake trout spearfish rudd píntano molly yellowtail barracuda herring false cat shark arrowtooth eel. Electric stargazer pike conger queen danio: lemon shark. Conger eel yellowfin surgeonfish, "cowfish, catla monkfish," South American darter.</p>
+
   <div style="clear: both;"></div>
 </div>
 
