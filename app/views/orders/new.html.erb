@@ -13,5 +13,20 @@
     </div>
   <% end %>
   Total order price: <%= number_to_currency(@total_cost / 100.0) %>
+
 </div>
-<%= button_to "Place Order", "/orders", method: :post %>
+<%= form_for @order do |f| %>
+  Delivery? <%= f.check_box :delivery %><br>
+  <%= f.label :street_number, "Address"%>
+  <%= text_field_tag "address[street_number]" %><br>
+  <%= f.label :street, "Address 2" %>
+  <%= text_field_tag "address[street]" %><br>
+  <%= f.label :city, "City" %>
+  <%= text_field_tag "address[city]" %><br>
+  <%= f.label :state, "State" %>
+  <%= text_field_tag "address[state]" %><br>
+  <%= f.label :zip, "Zip Code" %>
+  <%= text_field_tag "address[zip]" %><br>
+
+  <%= f.submit "Place Order" %>
+<% end %>
