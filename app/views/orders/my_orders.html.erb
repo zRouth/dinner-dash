@@ -1,6 +1,8 @@
-<% @orders.each do |order| user = order.user %>
 <div class="orderwrapper">
-  
+  <div class="orderinfo">Customer info needs to go here. Name, address, etc.</div>
+  <div class="orderitem"><% @orders.each do |order| user = order.user %>
+
   <%= render partial: "/orders/order", locals: {order: order} %>
+  </div>
 </div>
 <% end %>
