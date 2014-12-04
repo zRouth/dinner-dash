@@ -1,16 +1,16 @@
 <div class="about-us">About Us</div><br>
 <div class="profile-wrapper">
-  <p>The 4 of us met while rafting in the ocean, just south of Japan. When Zach's handmade kayak capsized, he hopped abord the raft after a dramatic rescue. He noted that his grandfather, a Nokogiri master, had crafted the kayak out of ancient wood that he found when rescuing pandas. This sparked a conversation we will never forget: horses are turning into eagles. Once back on dry land, it was decided that we all needed to use our education and skill to formulate sushi from computers.</p>
+  <p>The four of us met while rafting in the ocean, just south of Japan. When Zach's handmade kayak capsized, he hopped aboard our raft after a dramatic rescue. He noted that his grandfather, a Nokogiri master, had crafted the kayak out of ancient wood that he found when rescuing pandas. This sparked a conversation we will never forget: horses are turning into eagles. Once back on dry land, it was decided that we all needed to use our education and skill to formulate sushi from computers.</p>
   <% @profiles.each do |name, github_username| %>
   <div class="profiles">
     <h2><%= link_to name.upcase, "https://github.com/#{github_username}" %></h2>
     <%= link_to image_tag("#{name}.jpg", border: 0, alt: name, width: "40%"), "https://github.com/#{github_username}" %>
   </div>
   <% end %>
-  <div class="profiles"><p><strong>Alex</strong> has enjoyed his time growing up in rural Alaska, hunting fresh salmon with the bears every year. When he is not wading in the icey rivers, he enjoys long walks in the wilderness with his pet capybara, Jorge.</p></div>
+  <div class="profiles"><p><strong>Alex</strong> has enjoyed his time growing up in rural Alaska, hunting fresh salmon with the bears every year. When he is not wading in the icy rivers, he enjoys long walks in the wilderness with his pet capybara, Jorge.</p></div>
   <div class="profiles"><p><strong>Chandra</strong> has found that she works best in the rice fields, gathering sushi sandwiches and aging rice wine in her spare time. She finds joy in eating wasabi for breakfast and understanding the needs of coffee and cream cheese.</p></div>
-  <div class="profiles"><p><strong>Kate</strong> is known for picking fresh seaweed off the ocean floor; she often encouters sharks and finds that gently stroking them behind the right ear calms their nerves. She has won medals for her fresh seaweed.</p></div>
-  <div class="profiles"><p><strong>Zach</strong> has worked rigorously with Alex's bears to teach them how to make sushi. Occasionally one of the bears tries to eat Alex, but Zach is always there to remind the bears that we at Nokogiri sushi frown upon harassment.</p></div>
-  <p>Piranha Black shortnose chimaera daggertooth <strong>orangespine unicorn fish</strong> flatfish European chub. Spiny dwarf catfish Black swallower.</p>
+  <div class="profiles"><p><strong>Kate</strong> is known for picking fresh seaweed off the ocean floor; she often encounters sharks and finds that gently stroking them behind the right ear calms their nerves. She has won medals for her fresh seaweed.</p></div>
+  <div class="profiles"><p><strong>Zach</strong> has worked rigorously with Alex's bears to teach them how to make sushi. Occasionally one of the bears tries to eat Alex, but Zach is always there to remind the bears that we at Nokogiri Sushi frown upon harassment.</p></div>
+  <p>Some <a href="http://tunaipsum.com/" target="_new" alt="Tuna Ipsum: A Fish Lorem Ipsum Generator">Tuna Ipsum</a>, because fish: Piranha Black shortnose chimaera daggertooth <strong>orangespine unicorn fish</strong> flatfish European chub. Spiny dwarf catfish Black swallower. Flathead arrowtooth eel cavefish mud minnow flounder alfonsino noodlefish alewife loach anemonefish.</p>
   <div style="clear: both;"></div>
 </div>

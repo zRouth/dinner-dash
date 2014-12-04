@@ -408,19 +408,19 @@ subnav a:hover {
   border-radius: 50px;
 }
 
-.profiles a {
-  color: #000;
-  text-decoration: none;
-}
-
-.profiles a:hover {
-  color: #ff0000;
-  text-decoration: none;
-}
-
 .profile-wrapper {
   width: 80%;
   margin: 10px auto;
+}
+
+.profile-wrapper a {
+  color: #669ae2;
+  text-decoration: none;
+}
+
+.profile-wrapper a:hover {
+  color: #ff0000;
+  text-decoration: none;
 }
 
 /*contact page styles*/
