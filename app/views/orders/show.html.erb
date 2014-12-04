@@ -3,11 +3,11 @@
 
 <div class="orderwrapper">
   <div class="orderinfo">
-    <strong>Name:</strong> wut <br>
-    <strong>Username:</strong> wut <br>
-    <strong>Email:</strong> wut <br>
+    <strong>Name:</strong> <%= @order.user.full_name %><br>
+    <strong>Username:</strong> <%= @order.user.user_name %><br>
+    <strong>Email:</strong> <%= @order.user.email %><br>
     <br>
-    <div class="note">This order was placed at wut</div>
+    <div class="note">This order was placed at <%= @order.created_at %></div>
     <br>
     <hr>
 

@@ -61,7 +61,7 @@ class OrdersController < ApplicationController
   def update
     order = Order.includes(:order_menu_items).find(params[:id])
     order.update_attributes status: params[:order][:status]
-    params[:menu_item].each do |menu_item_id, quantity|
+    (params[:menu_item] || []).each do |menu_item_id, quantity|
       order_menu_item = order.order_menu_items.find_by(menu_item_id: menu_item_id)
       if quantity.to_i > 0
         order_menu_item.update_attributes quantity: quantity
